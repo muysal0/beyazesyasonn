@@ -7,10 +7,10 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none';">
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <title>TeknikServis - Beyaz Eşya Tamiri ve Bakım Hizmetleri</title>
+    <title>Kurumsal - TeknikServis</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:system-ui,sans-serif;min-height:100vh;background:linear-gradient(135deg,#eff6ff,#e0e7ff);display:flex;flex-direction:column}
+        body{font-family:system-ui,sans-serif;min-height:100vh;background:#fff;display:flex;flex-direction:column}
         .navbar{background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:sticky;top:0;z-index:50}
         .nav-container{max-width:1280px;margin:0 auto;padding:0 1rem}
         .nav-content{display:flex;justify-content:space-between;align-items:center;height:4rem}
@@ -37,12 +37,22 @@
         .mobile-services-checkbox:checked~.mobile-services-menu{display:block}
         .mobile-dropdown-arrow{float:right;transition:transform .2s}
         .mobile-services-checkbox:checked~.mobile-nav-link .mobile-dropdown-arrow{transform:rotate(180deg)}
-        .main-content{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1rem}
-        .hero{text-align:center;max-width:48rem}
-        .hero h1{font-size:2.5rem;font-weight:700;color:#1f2937;margin-bottom:1.5rem}
-        .hero p{font-size:1.125rem;color:#6b7280;margin-bottom:2rem;line-height:1.6}
-        .cta-button{background:#4f46e5;color:#fff;padding:.75rem 2rem;border-radius:.5rem;text-decoration:none;font-weight:600;display:inline-block;box-shadow:0 2px 4px rgba(0,0,0,.1)}
-        .cta-button:hover{background:#3730a3;transform:translateY(-1px)}
+        
+        /* Main Content */
+        .main-content{flex:1;padding:2rem 1rem}
+        .container{max-width:1000px;margin:0 auto}
+        .content-section{background:#fff;padding:2rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,.1);margin-bottom:2rem}
+        .page-title{font-size:2.5rem;font-weight:700;color:#2563eb;margin-bottom:1.5rem;text-align:center}
+        .content-text{color:#374151;line-height:1.6;margin-bottom:1.5rem}
+        .content-subtitle{font-size:1.5rem;font-weight:600;color:#1f2937;margin:2rem 0 1rem 0;border-bottom:2px solid #e5e7eb;padding-bottom:.5rem}
+        .highlight-box{background:#f0f9ff;border-left:4px solid #2563eb;padding:1.5rem;margin:1.5rem 0;border-radius:.5rem}
+        .contact-info{background:#f8fafc;padding:1.5rem;border-radius:.75rem;margin:1.5rem 0}
+        .contact-item{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;color:#374151}
+        .contact-icon{width:1.5rem;height:1.5rem;color:#2563eb}
+        .list-item{margin-bottom:.75rem;padding-left:1rem}
+        .back-link{display:inline-flex;align-items:center;gap:.5rem;color:#4f46e5;text-decoration:none;margin-bottom:2rem;padding:.5rem 1rem;border-radius:.5rem;background:#f8fafc;transition:all .3s}
+        .back-link:hover{background:#e2e8f0;transform:translateX(-5px)}
+        
         .footer{background:#1f2937;color:#fff;padding:3rem 1rem}
         .footer-container{max-width:1280px;margin:0 auto}
         .footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:2rem}
@@ -51,23 +61,25 @@
         .footer-section li{margin-bottom:.5rem}
         .footer-link{color:#d1d5db;text-decoration:none}
         .footer-link:hover{color:#fff}
-        .contact-item{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;color:#d1d5db}
+        .footer-contact-item{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;color:#d1d5db}
         .company-text{color:#d1d5db;font-size:.875rem;line-height:1.5}
         .highlight{color:#fbbf24;font-weight:600}
         .footer-bottom{border-top:1px solid #374151;padding-top:2rem;text-align:center;color:#d1d5db}
         .icon{width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2}
         .dropdown-icon{width:1rem;height:1rem}
         .dropdown:hover .dropdown-icon{transform:rotate(180deg)}
+        
         @media(min-width:768px){
             .nav-menu{display:flex}
             .mobile-toggle{display:none}
-            .hero h1{font-size:3.75rem}
             .footer-grid{grid-template-columns:repeat(4,1fr)}
             .footer-section{text-align:left}
         }
         @media(max-width:767px){
+            .page-title{font-size:2rem}
+            .content-section{padding:1.5rem}
             .footer-section{text-align:center}
-            .contact-item{justify-content:center}
+            .footer-contact-item{justify-content:center}
         }
     </style>
 </head>
@@ -105,7 +117,7 @@
                         </div>
                     </div>
                     
-                    <a href="#" class="nav-link">İletişim</a>
+                    <a href="digerleri.html?page=iletisim" class="nav-link">İletişim</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -121,8 +133,8 @@
             <!-- Mobile Menu -->
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <div class="mobile-menu">
-                <a href="#" class="mobile-nav-link">Ana Sayfa</a>
-                <a href="#" class="mobile-nav-link">Hakkımızda</a>
+                <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+                <a href="digerleri.html?page=hakkimizda" class="mobile-nav-link">Hakkımızda</a>
                 
                 <!-- Mobile Services Dropdown -->
                 <div class="mobile-dropdown-toggle">
@@ -145,17 +157,27 @@
                     </div>
                 </div>
                 
-                <a href="#" class="mobile-nav-link">İletişim</a>
+                <a href="digerleri.html?page=iletisim" class="mobile-nav-link">İletişim</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="hero">
-            <h1>Hoş Geldiniz</h1>
-            <p>Bu sayfa mobil uyumlu navbar ve footer ile tasarlanmıştır. Menü butonunu test etmek için mobil görünümde deneyin.</p>
-            <a href="#" class="cta-button">Başlayın</a>
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m15 18-6-6 6-6"/>
+                </svg>
+                Ana Sayfaya Dön
+            </a>
+            
+            <div class="content-section">
+                <h1 class="page-title" id="page-title">Kurumsal</h1>
+                <div id="content-area">
+                    <p class="content-text">Lütfen yukarıdaki menüden bir bölüm seçiniz.</p>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -168,9 +190,11 @@
                     <h2>Navigasyon</h2>
                     <ul>
                         <li><a href="index.html" class="footer-link">Ana Sayfa</a></li>
-                        <li><a href="hizmetler.html" class="footer-link">Hizmetler</a></li>
-                        <li><a href="#" class="footer-link">Hakkımızda</a></li>
-                        <li><a href="#" class="footer-link">İletişim</a></li>
+                        <li><a href="hizmetlergenel.html" class="footer-link">Hizmetler</a></li>
+                        <li><a href="digerleri.html?page=hakkimizda" class="footer-link">Hakkımızda</a></li>
+                        <li><a href="digerleri.html?page=iletisim" class="footer-link">İletişim</a></li>
+                        <li><a href="digerleri.html?page=kvkk" class="footer-link">KVKK</a></li>
+                        <li><a href="digerleri.html?page=gizlilik" class="footer-link">Gizlilik Politikası</a></li>
                     </ul>
                 </div>
                 
@@ -192,20 +216,20 @@
                 <!-- Contact Info -->
                 <div class="footer-section">
                     <h2>İletişim</h2>
-                    <div class="contact-item">
+                    <div class="footer-contact-item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
                         +90 555 123 45 67
                     </div>
-                    <div class="contact-item">
+                    <div class="footer-contact-item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
                         info@sirket.com
                     </div>
-                    <div class="contact-item">
+                    <div class="footer-contact-item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                             <circle cx="12" cy="10" r="3"/>
@@ -231,5 +255,166 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // URL parametresini al
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+        
+        // Sayfa içerikleri
+        const pageData = {
+            'hakkimizda': {
+                title: 'Hakkımızda',
+                content: `
+                    <p class="content-text">TeknikServis olarak 2015 yılından bu yana İstanbul genelinde profesyonel beyaz eşya tamiri hizmeti vermekteyiz. Müşteri memnuniyetini ön planda tutan anlayışımızla, kaliteli ve güvenilir hizmet sunmaktayız.</p>
+                    
+                    <h2 class="content-subtitle">Misyonumuz</h2>
+                    <p class="content-text">Arızalı beyaz eşyalarınızı en kısa sürede ve en uygun maliyetle tamir ederek, günlük hayatınızda yaşadığınız aksaklıkları gidermek.</p>
+                    
+                    <h2 class="content-subtitle">Vizyonumuz</h2>
+                    <p class="content-text">Beyaz eşya tamir sektöründe güvenilir, kaliteli ve müşteri odaklı hizmet anlayışıyla sektörün lider markası olmak.</p>
+                    
+                    <div class="highlight-box">
+                        <h2 class="content-subtitle">Neden TeknikServis?</h2>
+                        <div class="list-item">✓ Deneyimli ve uzman teknisyen kadrosu</div>
+                        <div class="list-item">✓ Aynı gün servis hizmeti</div>
+                        <div class="list-item">✓ Uygun fiyat politikası</div>
+                        <div class="list-item">✓ 3 ay işçilik garantisi</div>
+                        <div class="list-item">✓ İstanbul genelinde hizmet</div>
+                        <div class="list-item">✓ Tüm marka ve modellerde destek</div>
+                    </div>
+                    
+                    <h2 class="content-subtitle">Hizmet Alanlarımız</h2>
+                    <p class="content-text">Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon tamiri konularında profesyonel hizmet vermekteyiz. Garantisi olmayan tüm cihazlarınız için ekonomik çözümler sunuyoruz.</p>
+                `
+            },
+            'iletisim': {
+                title: 'İletişim',
+                content: `
+                    <p class="content-text">Beyaz eşya tamiri ve teknik servis hizmetleri için bizimle iletişime geçin. Profesyonel ekibimiz size en hızlı şekilde yardımcı olmaya hazır.</p>
+                    
+                    <div class="contact-info">
+                        <h2 class="content-subtitle">İletişim Bilgileri</h2>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <div>
+                                <strong>Telefon:</strong><br>
+                                +90 555 123 45 67
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <div>
+                                <strong>E-posta:</strong><br>
+                                info@sirket.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <div>
+                                <strong>Hizmet Bölgesi:</strong><br>
+                                İstanbul - Tüm İlçeler
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="content-subtitle">Çalışma Saatleri</h2>
+                    <div class="highlight-box">
+                        <div class="list-item"><strong>Pazartesi - Cumartesi:</strong> 08:00 - 20:00</div>
+                        <div class="list-item"><strong>Pazar:</strong> 09:00 - 18:00</div>
+                        <div class="list-item"><strong>Acil Durum:</strong> 7/24 arayabilirsiniz</div>
+                    </div>
+                    
+                    <p class="content-text">Arızalı cihazınız için randevu almak veya fiyat bilgisi almak için hemen arayın. Teknisyenlerimiz en kısa sürede adresinizde olacaktır.</p>
+                `
+            },
+            'kvkk': {
+                title: 'KVKK - Kişisel Verilerin Korunması',
+                content: `
+                    <p class="content-text">6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında kişisel verilerinizin işlenmesine ilişkin bilgilendirme metni aşağıdadır.</p>
+                    
+                    <h2 class="content-subtitle">Veri Sorumlusu</h2>
+                    <p class="content-text">TeknikServis olarak, kişisel verilerinizin işlenmesinde veri sorumlusu sıfatıyla hareket etmekteyiz.</p>
+                    
+                    <h2 class="content-subtitle">Kişisel Verilerin İşlenme Amaçları</h2>
+                    <div class="list-item">• Teknik servis hizmetinin sağlanması</div>
+                    <div class="list-item">• İletişim kurulması ve randevu alınması</div>
+                    <div class="list-item">• Hizmet kalitesinin artırılması</div>
+                    <div class="list-item">• Yasal yükümlülüklerin yerine getirilmesi</div>
+                    <div class="list-item">• Müşteri memnuniyetinin ölçülmesi</div>
+                    
+                    <h2 class="content-subtitle">İşlenen Kişisel Veri Türleri</h2>
+                    <div class="list-item">• Ad, soyad bilgisi</div>
+                    <div class="list-item">• Telefon numarası</div>
+                    <div class="list-item">• E-posta adresi</div>
+                    <div class="list-item">• Adres bilgisi</div>
+                    <div class="list-item">• Cihaz arıza bilgileri</div>
+                    
+                    <h2 class="content-subtitle">Kişisel Verilerin Aktarılması</h2>
+                    <p class="content-text">Kişisel verileriniz, hizmet kalitesinin artırılması, yasal yükümlülüklerin yerine getirilmesi amacıyla yetkili kamu kurum ve kuruluşları ile paylaşılabilir.</p>
+                    
+                    <div class="highlight-box">
+                        <h2 class="content-subtitle">KVKK Kapsamındaki Haklarınız</h2>
+                        <div class="list-item">• Kişisel verilerinizin işlenip işlenmediğini öğrenme</div>
+                        <div class="list-item">• İşlenen kişisel veriler hakkında bilgi talep etme</div>
+                        <div class="list-item">• Kişisel verilerin düzeltilmesini talep etme</div>
+                        <div class="list-item">• Kişisel verilerin silinmesini talep etme</div>
+                        <div class="list-item">• İşleme faaliyetine itiraz etme</div>
+                    </div>
+                    
+                    <p class="content-text">KVKK kapsamındaki haklarınızı kullanmak için info@sirket.com adresine e-posta gönderebilirsiniz.</p>
+                `
+            },
+            'gizlilik': {
+                title: 'Gizlilik Politikası',
+                content: `
+                    <p class="content-text">TeknikServis olarak müşterilerimizin gizliliğini korumayı taahhüt ediyoruz. Bu gizlilik politikası, topladığımız bilgilerin nasıl kullanıldığını açıklar.</p>
+                    
+                    <h2 class="content-subtitle">Topladığımız Bilgiler</h2>
+                    <div class="list-item">• Servis talebi sırasında verdiğiniz kişisel bilgiler</div>
+                    <div class="list-item">• İletişim bilgileri (telefon, e-posta, adres)</div>
+                    <div class="list-item">• Cihaz ve arıza bilgileri</div>
+                    <div class="list-item">• Hizmet geçmişi bilgileri</div>
+                    
+                    <h2 class="content-subtitle">Bilgilerin Kullanım Amaçları</h2>
+                    <div class="list-item">• Teknik servis hizmetinin sunulması</div>
+                    <div class="list-item">• Müşteri desteği sağlanması</div>
+                    <div class="list-item">• Hizmet kalitesinin geliştirilmesi</div>
+                    <div class="list-item">• Yasal gerekliliklerin karşılanması</div>
+                    
+                    <h2 class="content-subtitle">Bilgi Güvenliği</h2>
+                    <p class="content-text">Kişisel bilgilerinizi korumak için gerekli teknik ve idari tedbirleri almaktayız. Bilgileriniz yetkisiz erişime karşı güvence altındadır.</p>
+                    
+                    <div class="highlight-box">
+                        <h2 class="content-subtitle">Çerezler (Cookies)</h2>
+                        <p class="content-text">Web sitemizde kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanılabilir. Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz.</p>
+                    </div>
+                    
+                    <h2 class="content-subtitle">Üçüncü Taraf Paylaşımı</h2>
+                    <p class="content-text">Kişisel bilgilerinizi üçüncü taraflarla paylaşmıyoruz. Sadece yasal yükümlülükler çerçevesinde yetkili kurumlara bilgi verilebilir.</p>
+                    
+                    <h2 class="content-subtitle">İletişim</h2>
+                    <p class="content-text">Gizlilik politikamız hakkında sorularınız için info@sirket.com adresinden bizimle iletişime geçebilirsiniz.</p>
+                    
+                    <p class="content-text"><strong>Son Güncelleme:</strong> ${new Date().toLocaleDateString('tr-TR')}</p>
+                `
+            }
+        };
+        
+        // Sayfa yüklendiğinde içeriği güncelle
+        if (page && pageData[page]) {
+            document.getElementById('page-title').textContent = pageData[page].title;
+            document.getElementById('content-area').innerHTML = pageData[page].content;
+            document.title = pageData[page].title + ' - TeknikServis';
+        }
+    </script>
 </body>
 </html>
