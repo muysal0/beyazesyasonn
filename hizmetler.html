@@ -257,6 +257,78 @@
         font-size: 1rem;
       }
     }
+    /* Services Grid */
+    .services-grid-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 0 2rem 0;
+      background: none;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 2rem;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 12px rgba(37,99,235,0.08);
+      padding: 2.2rem 1.2rem 1.7rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+      border: 2px solid #e0e7ff;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+      transform: translateY(-4px) scale(1.04);
+      border-color: #2563eb;
+    }
+    .service-icon {
+      font-size: 2.5em;
+      margin-bottom: 0.7em;
+      color: #2563eb;
+    }
+    .service-title {
+      font-size: 1.25em;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .services-grid {
+        gap: 1.2rem;
+      }
+    }
+    /* Her zaman 3x3 grid */
+    @media (max-width: 700px), (max-width: 500px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+      }
+        .service-card {
+          padding: 0.6rem 0.2rem 0.6rem 0.2rem;
+        }
+        .service-icon {
+          font-size: 1.5em;
+          margin-bottom: 0.3em;
+        }
+        .service-title {
+          font-size: 0.95em;
+          margin-bottom: 0.2em;
+        }
+    }
   </style>
 </head>
 <body>
@@ -344,8 +416,46 @@
 
     <!-- Main Content -->
     <main>
-        
-
+    <section class="services-grid-section">
+      <div class="services-grid">
+        <div class="service-card" onclick="window.location.href='hizmetlergenel.html?service=beyaz-esya'" style="cursor:pointer;">
+          <div class="service-icon">👕</div>
+          <div class="service-title">Beyaz Eşya</div>
+        </div>
+        <div class="service-card" onclick="window.location.href='hizmetlergenel.html?service=buzdolabi'" style="cursor:pointer;">
+          <div class="service-icon">🧊</div>
+          <div class="service-title">Buzdolabı</div>
+        </div>
+        <div class="service-card" onclick="window.location.href='hizmetlergenel.html?service=camasir-makinesi'" style="cursor:pointer;">
+          <div class="service-icon">🧺</div>
+          <div class="service-title">Çamaşır Makinesi</div>
+        </div>
+        <div class="service-card" onclick="window.location.href='hizmetlergenel.html?service=bulasik-makinesi'" style="cursor:pointer;">
+          <div class="service-icon">🍽️</div>
+          <div class="service-title">Bulaşık Makinesi</div>
+        </div>
+        <div class="service-card" onclick="window.location.href='tel:+905551234567'" style="cursor:pointer;background-color: #0D6EFD;">
+          <div class="service-icon">📞</div>
+          <div class="service-title">Hemen Ara</div>
+        </div>
+        <div class="service-card" onclick="window.location.href='hizmetlergenel.html?service=firin'" style="cursor:pointer;">
+          <div class="service-icon">♨️</div>
+          <div class="service-title">Fırın</div>
+        </div>
+        <div class="service-card" onclick="window.location.href='hizmetlergenel.html?service=klima'" style="cursor:pointer;">
+          <div class="service-icon">❄︎</div>
+          <div class="service-title">Klima</div>
+        </div>
+        <div class="service-card" onclick="window.location.href='hizmetlergenel.html?service=kombi'" style="cursor:pointer;">
+          <div class="service-icon">🔥</div>
+          <div class="service-title">Kombi</div>
+        </div>
+        <div class="service-card" onclick="window.location.href='hizmetlergenel.html?service=televizyon'" style="cursor:pointer;">
+          <div class="service-icon">📺</div>
+          <div class="service-title">Televizyon</div>
+        </div>
+      </div>
+    </section>
     </main>
 
     <!-- Footer -->
