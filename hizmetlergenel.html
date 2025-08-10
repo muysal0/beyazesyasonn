@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Profesyonel beyaz eşya tamiri ve bakım hizmetleri. Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon servisi. İstanbul genelinde hızlı ve güvenilir teknik servis.">
-    <title>TeknikServis - Beyaz Eşya Tamiri ve Bakım Hizmetleri</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none';">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>Hizmetlerimiz - TeknikServis</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:system-ui,sans-serif;min-height:100vh;background:linear-gradient(135deg,#eff6ff,#e0e7ff);display:flex;flex-direction:column}
+        body{font-family:system-ui,sans-serif;min-height:100vh;background:#fff;display:flex;flex-direction:column}
         .navbar{background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:sticky;top:0;z-index:50}
         .nav-container{max-width:1280px;margin:0 auto;padding:0 1rem}
         .nav-content{display:flex;justify-content:space-between;align-items:center;height:4rem}
@@ -26,21 +29,60 @@
         .mobile-menu{display:none;background:#fff;border-top:1px solid #e5e7eb;padding:1rem}
         .mobile-nav-link{display:block;padding:.75rem;color:#374151;text-decoration:none;border-radius:.375rem}
         .mobile-nav-link:hover{background:#eef2ff;color:#4f46e5}
-        .mobile-dropdown{margin-left:1rem;display:none}
         .menu-checkbox{display:none}
         .menu-checkbox:checked~.mobile-menu{display:block}
-        .services-checkbox{display:none}
-        .services-checkbox:checked~.mobile-dropdown{display:block}
-        .main-content{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1rem}
-        .hero{text-align:center;max-width:48rem}
-        .hero h1{font-size:2.5rem;font-weight:700;color:#1f2937;margin-bottom:1.5rem}
-        .hero p{font-size:1.125rem;color:#6b7280;margin-bottom:2rem;line-height:1.6}
-        .cta-button{background:#4f46e5;color:#fff;padding:.75rem 2rem;border-radius:.5rem;text-decoration:none;font-weight:600;display:inline-block;box-shadow:0 2px 4px rgba(0,0,0,.1)}
-        .cta-button:hover{background:#3730a3;transform:translateY(-1px)}
+        .mobile-dropdown-toggle{position:relative}
+        .mobile-services-checkbox{display:none}
+        .mobile-services-menu{display:none;margin-left:1rem;background:#f8fafc;border-radius:.375rem;margin-top:.5rem;padding:.5rem 0}
+        .mobile-services-checkbox:checked~.mobile-services-menu{display:block}
+        .mobile-dropdown-arrow{float:right;transition:transform .2s}
+        .mobile-services-checkbox:checked~.mobile-nav-link .mobile-dropdown-arrow{transform:rotate(180deg)}
+        
+        /* Main Content Styles */
+        .main-content{flex:1;padding:2rem 1rem}
+        .container{max-width:1200px;margin:0 auto}
+        
+        /* Hero Section */
+        .hero-section{text-align:center;padding:3rem 0;margin-bottom:3rem}
+        .hero-title{font-size:3rem;font-weight:700;color:#2563eb;margin-bottom:1rem}
+        .hero-description{font-size:1.125rem;color:#6b7280;max-width:600px;margin:0 auto;line-height:1.6}
+        
+        /* Features Section */
+        .features-section{margin-bottom:4rem}
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+        .feature-card{background:#f8fafc;padding:2rem;border-radius:1rem;text-align:center;border:1px solid #e2e8f0;transition:all .3s}
+        .feature-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
+        .feature-icon{width:4rem;height:4rem;background:#2563eb;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:#fff;font-size:1.5rem}
+        .feature-title{font-size:1.25rem;font-weight:600;color:#1f2937;margin-bottom:.5rem}
+        .feature-description{color:#6b7280;line-height:1.5}
+        
+        /* CTA Section */
+        .cta-section{text-align:center;margin:4rem 0;padding:3rem 2rem;background:linear-gradient(135deg,#2563eb,#1d4ed8);border-radius:1rem;color:#fff}
+        .cta-title{font-size:2rem;font-weight:700;margin-bottom:.5rem}
+        .cta-phone{font-size:1.5rem;font-weight:600;margin-bottom:1.5rem}
+        .cta-button{background:#fff;color:#2563eb;padding:1rem 2rem;border-radius:.5rem;text-decoration:none;font-weight:600;display:inline-block;transition:all .3s}
+        .cta-button:hover{background:#f1f5f9;transform:translateY(-2px)}
+        
+        /* Reviews Section */
+        .reviews-section{margin-bottom:4rem}
+        .section-title{font-size:2rem;font-weight:700;color:#1f2937;text-align:center;margin-bottom:2rem}
+        .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+        .review-card{background:#f8fafc;padding:1.5rem;border-radius:1rem;border-left:4px solid #2563eb}
+        .review-name{font-weight:600;color:#1f2937;margin-bottom:.5rem}
+        .review-text{color:#6b7280;line-height:1.6;font-style:italic}
+        
+        /* FAQ Section */
+        .faq-section{margin-bottom:4rem}
+        .faq-item{margin-bottom:2rem}
+        .faq-question{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.5rem}
+        .faq-icon{color:#dc2626;font-size:1.25rem;margin-top:.125rem}
+        .faq-question-text{font-weight:600;color:#1f2937;font-size:1.1rem}
+        .faq-answer{color:#6b7280;line-height:1.6;margin-left:2rem}
+        
         .footer{background:#1f2937;color:#fff;padding:3rem 1rem}
         .footer-container{max-width:1280px;margin:0 auto}
         .footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:2rem}
-        .footer-section h4{font-size:1.125rem;font-weight:600;margin-bottom:1rem;color:#fff}
+        .footer-section h2{font-size:1.125rem;font-weight:600;margin-bottom:1rem;color:#fff}
         .footer-section ul{list-style:none}
         .footer-section li{margin-bottom:.5rem}
         .footer-link{color:#d1d5db;text-decoration:none}
@@ -52,14 +94,17 @@
         .icon{width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2}
         .dropdown-icon{width:1rem;height:1rem}
         .dropdown:hover .dropdown-icon{transform:rotate(180deg)}
+        
         @media(min-width:768px){
             .nav-menu{display:flex}
             .mobile-toggle{display:none}
-            .hero h1{font-size:3.75rem}
             .footer-grid{grid-template-columns:repeat(4,1fr)}
             .footer-section{text-align:left}
         }
         @media(max-width:767px){
+            .hero-title{font-size:2rem}
+            .cta-title{font-size:1.5rem}
+            .cta-phone{font-size:1.25rem}
             .footer-section{text-align:center}
             .contact-item{justify-content:center}
         }
@@ -71,31 +116,31 @@
         <div class="nav-container">
             <div class="nav-content">
                 <!-- Logo -->
-                <a href="#" class="logo">TeknikServis</a>
+                <a href="index.html" class="logo">TeknikServis</a>
                 
                 <!-- Desktop Menu -->
                 <div class="nav-menu">
-                    <a href="#" class="nav-link">Ana Sayfa</a>
+                    <a href="index.html" class="nav-link">Ana Sayfa</a>
                     <a href="#" class="nav-link">Hakkımızda</a>
                     
                     <!-- Services Dropdown -->
                     <div class="dropdown">
                         <div class="nav-link dropdown-toggle">
-                            Servislerimiz
+                            Hizmetlerimiz
                             <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6,9 12,15 18,9"/>
                             </svg>
                         </div>
                         
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Beyaz Eşya Servisi</a>
-                            <a href="#" class="dropdown-item">Buzdolabı</a>
-                            <a href="#" class="dropdown-item">Çamaşır Makinesi</a>
-                            <a href="#" class="dropdown-item">Bulaşık Makinesi</a>
-                            <a href="#" class="dropdown-item">Fırın</a>
-                            <a href="#" class="dropdown-item">Klima</a>
-                            <a href="#" class="dropdown-item">Kombi</a>
-                            <a href="#" class="dropdown-item">Televizyon</a>
+                            <a href="hizmetlergenel.html?service=beyaz-esya" class="dropdown-item">Beyaz Eşya Servisi</a>
+                            <a href="hizmetlergenel.html?service=buzdolabi" class="dropdown-item">Buzdolabı</a>
+                            <a href="hizmetlergenel.html?service=camasir-makinesi" class="dropdown-item">Çamaşır Makinesi</a>
+                            <a href="hizmetlergenel.html?service=bulasik-makinesi" class="dropdown-item">Bulaşık Makinesi</a>
+                            <a href="hizmetlergenel.html?service=firin" class="dropdown-item">Fırın</a>
+                            <a href="hizmetlergenel.html?service=klima" class="dropdown-item">Klima</a>
+                            <a href="hizmetlergenel.html?service=kombi" class="dropdown-item">Kombi</a>
+                            <a href="hizmetlergenel.html?service=televizyon" class="dropdown-item">Televizyon</a>
                         </div>
                     </div>
                     
@@ -115,26 +160,28 @@
             <!-- Mobile Menu -->
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <div class="mobile-menu">
-                <a href="#" class="mobile-nav-link">Ana Sayfa</a>
+                <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
                 <a href="#" class="mobile-nav-link">Hakkımızda</a>
                 
-                <!-- Mobile Services -->
-                <label for="services-toggle" class="mobile-nav-link">
-                    Servislerimiz
-                    <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="float: right;">
-                        <polyline points="6,9 12,15 18,9"/>
-                    </svg>
-                </label>
-                <input type="checkbox" id="services-toggle" class="services-checkbox">
-                <div class="mobile-dropdown">
-                    <a href="#" class="mobile-nav-link">Beyaz Eşya Servisi</a>
-                    <a href="#" class="mobile-nav-link">Buzdolabı</a>
-                    <a href="#" class="mobile-nav-link">Çamaşır Makinesi</a>
-                    <a href="#" class="mobile-nav-link">Bulaşık Makinesi</a>
-                    <a href="#" class="mobile-nav-link">Fırın</a>
-                    <a href="#" class="mobile-nav-link">Klima</a>
-                    <a href="#" class="mobile-nav-link">Kombi</a>
-                    <a href="#" class="mobile-nav-link">Televizyon</a>
+                <!-- Mobile Services Dropdown -->
+                <div class="mobile-dropdown-toggle">
+                    <input type="checkbox" id="mobile-services-toggle" class="mobile-services-checkbox">
+                    <label for="mobile-services-toggle" class="mobile-nav-link">
+                        Servislerimiz
+                        <svg class="mobile-dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </label>
+                    <div class="mobile-services-menu">
+                        <a href="hizmetlergenel.html?service=beyaz-esya" class="mobile-nav-link">Beyaz Eşya Servisi</a>
+                        <a href="hizmetlergenel.html?service=buzdolabi" class="mobile-nav-link">Buzdolabı</a>
+                        <a href="hizmetlergenel.html?service=camasir-makinesi" class="mobile-nav-link">Çamaşır Makinesi</a>
+                        <a href="hizmetlergenel.html?service=bulasik-makinesi" class="mobile-nav-link">Bulaşık Makinesi</a>
+                        <a href="hizmetlergenel.html?service=firin" class="mobile-nav-link">Fırın</a>
+                        <a href="hizmetlergenel.html?service=klima" class="mobile-nav-link">Klima</a>
+                        <a href="hizmetlergenel.html?service=kombi" class="mobile-nav-link">Kombi</a>
+                        <a href="hizmetlergenel.html?service=televizyon" class="mobile-nav-link">Televizyon</a>
+                    </div>
                 </div>
                 
                 <a href="#" class="mobile-nav-link">İletişim</a>
@@ -144,10 +191,139 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="hero">
-            <h1>Hoş Geldiniz</h1>
-            <p>Bu sayfa mobil uyumlu navbar ve footer ile tasarlanmıştır. Menü butonunu test etmek için mobil görünümde deneyin.</p>
-            <a href="#" class="cta-button">Başlayın</a>
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">Hizmetlerimiz</h1>
+                <p class="hero-description">
+                    Profesyonel beyaz eşya tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle 
+                    hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.
+                </p>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3 class="feature-title">Uzman Ekip</h3>
+                        <p class="feature-description">
+                            Alanında deneyimli teknisyenlerimiz ile tüm buzdolabı arızalarına profesyonel çözümler sunuyoruz.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Hızlı Çözüm</h3>
+                        <p class="feature-description">
+                            Aynı gün servis hizmeti ile arızalarınızı en kısa sürede çözüme kavuşturuyoruz.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3 class="feature-title">Ekonomik Fiyat</h3>
+                        <p class="feature-description">
+                            Uygun fiyat politikamız ile kaliteli hizmeti herkesin erişebileceği seviyede sunuyoruz.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2 class="cta-title">HEMEN ARA</h2>
+                <div class="cta-phone">+90 555 123 45 67</div>
+                <a href="tel:+905551234567" class="cta-button">Şimdi Ara</a>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="reviews-section">
+                <h2 class="section-title">Müşteri Yorumları</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-name">Ahmet Demir</div>
+                        <p class="review-text">
+                            "Buzdolabım soğutmuyordu, aynı gün gelip tamir ettiler. Çok memnun kaldım, herkese tavsiye ederim."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-name">Fatma Yılmaz</div>
+                        <p class="review-text">
+                            "Fiyatları çok uygun, işçilik kaliteli. Teknisyen çok kibar ve bilgiliydi. Teşekkürler."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-name">Mehmet Kaya</div>
+                        <p class="review-text">
+                            "Hızlı servis, garantili işçilik. Buzdolabım eskisinden bile daha iyi çalışıyor şimdi."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">❓</span>
+                        <span class="faq-question-text">Arızalı cihazımı neden tamir ettirmeliyim?</span>
+                    </div>
+                    <p class="faq-answer">
+                        Yeni cihaz almak yerine tamiri genellikle daha ekonomiktir. Uzman teknisyenlerimiz ile cihazınızı uzun yıllar daha kullanabilirsiniz.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">❓</span>
+                        <span class="faq-question-text">Tamir süresi ne kadar?</span>
+                    </div>
+                    <p class="faq-answer">
+                        Arızanın türüne göre değişir ancak çoğu tamirler aynı gün içerisinde tamamlanır. Parça değişimi gereken durumlarda 1-2 gün sürebilir.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">❓</span>
+                        <span class="faq-question-text">Garanti veriliyor mu?</span>
+                    </div>
+                    <p class="faq-answer">
+                        Evet, tüm tamirlerimizde 3 ay işçilik garantisi veriyoruz. Değiştirilen parçalar için üretici garantisi geçerlidir.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">❓</span>
+                        <span class="faq-question-text">Hangi marka cihazları tamir ediyorsunuz?</span>
+                    </div>
+                    <p class="faq-answer">
+                        Arçelik, Beko, Bosch, Siemens, LG, Samsung, Vestel, Profilo gibi tüm yerli ve yabancı markaları tamir ediyoruz.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">❓</span>
+                        <span class="faq-question-text">Ödeme nasıl yapılır?</span>
+                    </div>
+                    <p class="faq-answer">
+                        Nakit, kredi kartı ve banka kartı ile ödeme kabul ediyoruz. Tamir tamamlandıktan sonra ödeme alınır.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">❓</span>
+                        <span class="faq-question-text">Servis bölgeniz neresi?</span>
+                    </div>
+                    <p class="faq-answer">
+                        İstanbul genelinde hizmet vermekteyiz. Tüm ilçelere ulaşım sağlanmaktadır. Detaylı bilgi için arayabilirsiniz.
+                    </p>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -157,10 +333,10 @@
             <div class="footer-grid">
                 <!-- Navigation -->
                 <div class="footer-section">
-                    <h4>Navigasyon</h4>
+                    <h2>Navigasyon</h2>
                     <ul>
-                        <li><a href="#" class="footer-link">Ana Sayfa</a></li>
-                        <li><a href="#" class="footer-link">Hizmetler</a></li>
+                        <li><a href="index.html" class="footer-link">Ana Sayfa</a></li>
+                        <li><a href="hizmetler.html" class="footer-link">Hizmetler</a></li>
                         <li><a href="#" class="footer-link">Hakkımızda</a></li>
                         <li><a href="#" class="footer-link">İletişim</a></li>
                     </ul>
@@ -168,22 +344,22 @@
                 
                 <!-- Services -->
                 <div class="footer-section">
-                    <h4>Hizmetlerimiz</h4>
+                    <h2>Hizmetlerimiz</h2>
                     <ul>
-                        <li><a href="#" class="footer-link">Beyaz Eşya Servisi</a></li>
-                        <li><a href="#" class="footer-link">Buzdolabı</a></li>
-                        <li><a href="#" class="footer-link">Çamaşır Makinesi</a></li>
-                        <li><a href="#" class="footer-link">Bulaşık Makinesi</a></li>
-                        <li><a href="#" class="footer-link">Fırın</a></li>
-                        <li><a href="#" class="footer-link">Klima</a></li>
-                        <li><a href="#" class="footer-link">Kombi</a></li>
-                        <li><a href="#" class="footer-link">Televizyon</a></li>
+                        <li><a href="hizmetlergenel.html?service=beyaz-esya" class="footer-link">Beyaz Eşya Servisi</a></li>
+                        <li><a href="hizmetlergenel.html?service=buzdolabi" class="footer-link">Buzdolabı</a></li>
+                        <li><a href="hizmetlergenel.html?service=camasir-makinesi" class="footer-link">Çamaşır Makinesi</a></li>
+                        <li><a href="hizmetlergenel.html?service=bulasik-makinesi" class="footer-link">Bulaşık Makinesi</a></li>
+                        <li><a href="hizmetlergenel.html?service=firin" class="footer-link">Fırın</a></li>
+                        <li><a href="hizmetlergenel.html?service=klima" class="footer-link">Klima</a></li>
+                        <li><a href="hizmetlergenel.html?service=kombi" class="footer-link">Kombi</a></li>
+                        <li><a href="hizmetlergenel.html?service=televizyon" class="footer-link">Televizyon</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div class="footer-section">
-                    <h4>İletişim</h4>
+                    <h2>İletişim</h2>
                     <div class="contact-item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -208,7 +384,7 @@
 
                 <!-- Company Info -->
                 <div class="footer-section">
-                    <h4>TeknikServis</h4>
+                    <h2>TeknikServis</h2>
                     <p class="company-text">
                         Profesyonel beyaz eşya tamiri ve bakım hizmetleri sunuyoruz. 
                         <span class="highlight">Bu işletme hiçbir markanın yetkili servisi değildir.</span> 
@@ -223,5 +399,54 @@
             </div>
         </div>
     </footer>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96cd779a42ccb817',t:'MTc1NDgwNzY2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    
+    <script>
+        // URL parametresini al
+        const urlParams = new URLSearchParams(window.location.search);
+        const service = urlParams.get('service');
+        
+        // Servis bilgileri
+        const serviceData = {
+            'beyaz-esya': {
+                title: 'Beyaz Eşya Servisi',
+                description: 'Profesyonel beyaz eşya tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.'
+            },
+            'buzdolabi': {
+                title: 'Buzdolabı Servisi',
+                description: 'Profesyonel buzdolabı tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.'
+            },
+            'camasir-makinesi': {
+                title: 'Çamaşır Makinesi Servisi',
+                description: 'Profesyonel çamaşır makinesi tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.'
+            },
+            'bulasik-makinesi': {
+                title: 'Bulaşık Makinesi Servisi',
+                description: 'Profesyonel bulaşık makinesi tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.'
+            },
+            'firin': {
+                title: 'Fırın Servisi',
+                description: 'Profesyonel fırın tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.'
+            },
+            'klima': {
+                title: 'Klima Servisi',
+                description: 'Profesyonel klima tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.'
+            },
+            'kombi': {
+                title: 'Kombi Servisi',
+                description: 'Profesyonel kombi tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.'
+            },
+            'televizyon': {
+                title: 'Televizyon Servisi',
+                description: 'Profesyonel televizyon tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.'
+            }
+        };
+        
+        // Sayfa yüklendiğinde hero bölümünü güncelle
+        if (service && serviceData[service]) {
+            document.querySelector('.hero-title').textContent = serviceData[service].title;
+            document.querySelector('.hero-description').textContent = serviceData[service].description;
+            document.title = serviceData[service].title + ' - TeknikServis';
+        }
+    </script>
+</body>
 </html>
