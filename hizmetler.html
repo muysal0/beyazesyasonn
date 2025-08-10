@@ -37,7 +37,7 @@
         .mobile-services-checkbox:checked~.mobile-services-menu{display:block}
         .mobile-dropdown-arrow{float:right;transition:transform .2s}
         .mobile-services-checkbox:checked~.mobile-nav-link .mobile-dropdown-arrow{transform:rotate(180deg)}
-        .main-content{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1rem}
+  .main-content{flex:1;display:flex;align-items:center;justify-content:center;padding:1.2rem 1rem}
         .hero{text-align:center;max-width:48rem}
         .hero h1{font-size:2.5rem;font-weight:700;color:#1f2937;margin-bottom:1.5rem}
         .hero p{font-size:1.125rem;color:#6b7280;margin-bottom:2rem;line-height:1.6}
@@ -58,6 +58,161 @@
         .icon{width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2}
         .dropdown-icon{width:1rem;height:1rem}
         .dropdown:hover .dropdown-icon{transform:rotate(180deg)}
+        .landing-container {
+          max-width: 700px;
+          width: 100%;
+          margin: 0 auto;
+          background: #fff;
+          border-radius: 2rem;
+          box-shadow: 0 8px 32px rgba(37,99,235,0.10), 0 2px 12px rgba(0,0,0,0.06);
+          padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .landing-title {
+          font-size: 3rem;
+          font-weight: 800;
+          color: #2563eb;
+          text-align: center;
+          margin-bottom: 1.5rem;
+          letter-spacing: -1px;
+        }
+        .landing-subtitle {
+          font-size: 0.95rem;
+          color: #374151;
+          text-align: center;
+          margin-bottom: 1.7rem;
+          line-height: 1.7;
+        }
+        .landing-rating {
+          display: flex;
+          align-items: center;
+          gap: 0.7rem;
+          margin-bottom: 2rem;
+        }
+        .stars {
+          display: flex;
+          gap: 0.18rem;
+        }
+        .star {
+          color: #fbbf24;
+          font-size: 1.7em;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.10);
+        }
+        .rating-number {
+          font-weight: 700;
+          color: #2563eb;
+          font-size: 1.18em;
+          margin-left: 0.4em;
+        }
+        .rating-text {
+          color: #6b7280;
+          font-size: 0.85em;
+          margin-left: 0.4em;
+        }
+        .rating-row {
+          display: flex;
+          align-items: center;
+          gap: 0.4em;
+        }
+        .landing-cta {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(90deg,#2563eb 60%,#1d4ed8 100%);
+          color: #fff;
+          font-size: 1.25rem;
+          font-weight: 700;
+          border-radius: 1rem;
+          box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+          padding: 1.2rem 3.2rem;
+          margin: 1.5rem 0 2.5rem 0;
+          text-decoration: none;
+          transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+          gap: 0.8em;
+        }
+        .landing-cta:hover {
+          background: linear-gradient(90deg,#1d4ed8 60%,#2563eb 100%);
+          box-shadow: 0 8px 24px rgba(37,99,235,0.18);
+          transform: translateY(-3px) scale(1.04);
+        }
+        .landing-features {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 1.3rem;
+        }
+        .features-row {
+          display: flex;
+          gap: 1.3rem;
+          justify-content: center;
+        }
+        .feature-box {
+          background: #f3f8ff;
+          border: 2px solid #dbeafe;
+          border-radius: 1.2rem;
+          box-shadow: 0 2px 8px rgba(37,99,235,0.07);
+          flex: 1 1 0;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 1.3rem 0.7rem 1rem 0.7rem;
+          gap: 0.6rem;
+        }
+        .feature-icon {
+          font-size: 2em;
+          color: #2563eb;
+          margin-bottom: 0.2em;
+        }
+        .feature-label {
+          font-size: 1.08em;
+          color: #1e293b;
+          font-weight: 600;
+          text-align: center;
+          line-height: 1.35;
+        }
+        @media (max-width: 600px) {
+          .landing-container {
+            padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+            border-radius: 1rem;
+          }
+          .landing-title {
+            font-size: 2rem;
+          }
+          .landing-subtitle {
+            font-size: 1rem;
+          }
+          .features-row {
+            flex-direction: row !important;
+            gap: 0.5rem;
+          }
+          .feature-box {
+            padding: 0.8rem 0.3rem 0.7rem 0.3rem;
+            font-size: 0.95em;
+          }
+          .feature-label {
+            font-size: 0.92em;
+          }
+          .landing-cta {
+            font-size: 1rem;
+            padding: 0.8rem 1.2rem;
+          }
+          .landing-rating {
+            flex-direction: column;
+            gap: 0.2rem;
+          }
+          .rating-text {
+            margin-top: 0.3em;
+            font-size: 0.8em;
+          }
+          .rating-row {
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+          }
+        }
         @media(min-width:768px){
             .nav-menu{display:flex}
             .mobile-toggle{display:none}
@@ -69,20 +224,57 @@
             .footer-section{text-align:center}
             .contact-item{justify-content:center}
         }
-    </style>
+    /* Sticky Button */
+    .sticky-btn {
+      position: fixed;
+      right: 32px;
+      bottom: 32px;
+      z-index: 100;
+      background: #0D6EFD;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      padding: 18px 32px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sticky-btn:hover {
+      background: #1565C0;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    }
+    @media(max-width:767px){
+      .sticky-btn {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 24px;
+        padding: 16px 24px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
+  <!-- Sticky Button -->
+  <button class="sticky-btn" onclick="window.location.href='tel:+905555555555'">
+    <span style="font-size:1.3em;">📞</span> Hemen Ara
+  </button>
+  <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-content">
                 <!-- Logo -->
                 <a href="index.html" class="logo">TeknikServis</a>
-                
+
                 <!-- Desktop Menu -->
                 <div class="nav-menu">
                     <a href="index.html" class="nav-link">Ana Sayfa</a>
-                    <a href="#" class="nav-link">Hakkımızda</a>
+                    <a href="digerleri.html?page=hakkimizda" class="nav-link">Hakkımızda</a>
                     
                     <!-- Services Dropdown -->
                     <div class="dropdown">
@@ -105,7 +297,7 @@
                         </div>
                     </div>
                     
-                    <a href="#" class="nav-link">İletişim</a>
+                    <a href="digerleri.html?page=iletisim" class="nav-link">İletişim</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -121,8 +313,8 @@
             <!-- Mobile Menu -->
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <div class="mobile-menu">
-                <a href="#" class="mobile-nav-link">Ana Sayfa</a>
-                <a href="#" class="mobile-nav-link">Hakkımızda</a>
+                <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+                <a href="digerleri.html?page=hakkimizda" class="mobile-nav-link">Hakkımızda</a>
                 
                 <!-- Mobile Services Dropdown -->
                 <div class="mobile-dropdown-toggle">
@@ -145,18 +337,15 @@
                     </div>
                 </div>
                 
-                <a href="#" class="mobile-nav-link">İletişim</a>
+                <a href="digerleri.html?page=iletisim" class="mobile-nav-link">İletişim</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
-        <div class="hero">
-            <h1>Hoş Geldiniz</h1>
-            <p>Bu sayfa mobil uyumlu navbar ve footer ile tasarlanmıştır. Menü butonunu test etmek için mobil görünümde deneyin.</p>
-            <a href="#" class="cta-button">Başlayın</a>
-        </div>
+    <main>
+        
+
     </main>
 
     <!-- Footer -->
@@ -173,7 +362,7 @@
                         <li><a href="digerleri.html?page=iletisim" class="footer-link">İletişim</a></li>
                         <li><a href="digerleri.html?page=kvkk" class="footer-link">KVKK</a></li>
                         <li><a href="digerleri.html?page=gizlilik" class="footer-link">Gizlilik Politikası</a></li>
-                        
+
                     </ul>
                 </div>
                 
@@ -181,14 +370,14 @@
                 <div class="footer-section">
                     <h2>Hizmetlerimiz</h2>
                     <ul>
-                        <li><a href="#" class="footer-link">Beyaz Eşya Servisi</a></li>
-                        <li><a href="#" class="footer-link">Buzdolabı</a></li>
-                        <li><a href="#" class="footer-link">Çamaşır Makinesi</a></li>
-                        <li><a href="#" class="footer-link">Bulaşık Makinesi</a></li>
-                        <li><a href="#" class="footer-link">Fırın</a></li>
-                        <li><a href="#" class="footer-link">Klima</a></li>
-                        <li><a href="#" class="footer-link">Kombi</a></li>
-                        <li><a href="#" class="footer-link">Televizyon</a></li>
+                        <li><a href="hizmetlergenel.html?service=beyaz-esya" class="footer-link">Beyaz Eşya Servisi</a></li>
+                        <li><a href="hizmetlergenel.html?service=buzdolabi" class="footer-link">Buzdolabı</a></li>
+                        <li><a href="hizmetlergenel.html?service=camasir-makinesi" class="footer-link">Çamaşır Makinesi</a></li>
+                        <li><a href="hizmetlergenel.html?service=bulasik-makinesi" class="footer-link">Bulaşık Makinesi</a></li>
+                        <li><a href="hizmetlergenel.html?service=firin" class="footer-link">Fırın</a></li>
+                        <li><a href="hizmetlergenel.html?service=klima" class="footer-link">Klima</a></li>
+                        <li><a href="hizmetlergenel.html?service=kombi" class="footer-link">Kombi</a></li>
+                        <li><a href="hizmetlergenel.html?service=televizyon" class="footer-link">Televizyon</a></li>
                     </ul>
                 </div>
 

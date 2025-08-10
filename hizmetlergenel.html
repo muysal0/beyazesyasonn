@@ -10,7 +10,7 @@
     <title>Hizmetlerimiz - TeknikServis</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:system-ui,sans-serif;min-height:100vh;background:#fff;display:flex;flex-direction:column}
+    body{font-family:system-ui,sans-serif;min-height:100vh;background:linear-gradient(135deg,#eff6ff,#e0e7ff);display:flex;flex-direction:column}
         .navbar{background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:sticky;top:0;z-index:50}
         .nav-container{max-width:1280px;margin:0 auto;padding:0 1rem}
         .nav-content{display:flex;justify-content:space-between;align-items:center;height:4rem}
@@ -108,9 +108,46 @@
             .footer-section{text-align:center}
             .contact-item{justify-content:center}
         }
+        /* Sticky Button */
+        .sticky-btn {
+            position: fixed;
+            right: 32px;
+            bottom: 32px;
+            z-index: 100;
+            background: #0D6EFD;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            padding: 18px 32px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sticky-btn:hover {
+            background: #1565C0;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+        }
+        @media(max-width:767px){
+            .sticky-btn {
+                right: 50%;
+                transform: translateX(50%);
+                bottom: 24px;
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Sticky Button -->
+    <button class="sticky-btn" onclick="window.location.href='tel:+905555555555'">
+        <span style="font-size:1.3em;">📞</span> Hemen Ara
+    </button>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -407,7 +444,10 @@
         // URL parametresini al
         const urlParams = new URLSearchParams(window.location.search);
         const service = urlParams.get('service');
-        
+        // Eğer parametre çok uzunsa ana sayfaya yönlendir
+        if (service && service.length > 40) {
+            window.location.href = 'index.html';
+        }
         // Servis bilgileri
         const serviceData = {
             'beyaz-esya': {
@@ -445,10 +485,19 @@
         };
         
         // Sayfa yüklendiğinde hero bölümünü güncelle
-        if (service && serviceData[service]) {
-            document.querySelector('.hero-title').textContent = serviceData[service].title;
-            document.querySelector('.hero-description').textContent = serviceData[service].description;
-            document.title = serviceData[service].title + ' - TeknikServis';
+        if (service) {
+            if (serviceData[service]) {
+                // Geçerli servis varsa, tanımlı bilgileri kullan
+                document.querySelector('.hero-title').textContent = serviceData[service].title;
+                document.querySelector('.hero-description').textContent = serviceData[service].description;
+                document.title = serviceData[service].title + ' - TeknikServis';
+            } else {
+                // Geçersiz servis parametresi varsa, URL'deki değeri başlık olarak göster
+                const customTitle = service.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) + ' ';
+                document.querySelector('.hero-title').textContent = customTitle;
+                document.querySelector('.hero-description').textContent = 'Profesyonel ' + service.replace(/-/g, ' ') + ' tamiri ve bakım hizmetleri. Tüm marka ve modellerde uzman ekibimizle hızlı çözümler sunuyoruz. Garantisiz cihazlarınız için ekonomik fiyatlarla kaliteli hizmet.';
+                document.title = customTitle + ' - TeknikServis';
+            }
         }
     </script>
 </body>

@@ -10,7 +10,7 @@
     <title>Kurumsal - TeknikServis</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:system-ui,sans-serif;min-height:100vh;background:#fff;display:flex;flex-direction:column}
+    body{font-family:system-ui,sans-serif;min-height:100vh;background:linear-gradient(135deg,#eff6ff,#e0e7ff);display:flex;flex-direction:column}
         .navbar{background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:sticky;top:0;z-index:50}
         .nav-container{max-width:1280px;margin:0 auto;padding:0 1rem}
         .nav-content{display:flex;justify-content:space-between;align-items:center;height:4rem}
@@ -68,6 +68,39 @@
         .icon{width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2}
         .dropdown-icon{width:1rem;height:1rem}
         .dropdown:hover .dropdown-icon{transform:rotate(180deg)}
+        /* Sticky Button */
+        .sticky-btn {
+            position: fixed;
+            right: 32px;
+            bottom: 32px;
+            z-index: 100;
+            background: #0D6EFD;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            padding: 18px 32px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sticky-btn:hover {
+            background: #1565C0;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+        }
+        @media(max-width:767px){
+            .sticky-btn {
+                right: 50%;
+                transform: translateX(50%);
+                bottom: 24px;
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+        }
         
         @media(min-width:768px){
             .nav-menu{display:flex}
@@ -84,6 +117,10 @@
     </style>
 </head>
 <body>
+    <!-- Sticky Button -->
+    <button class="sticky-btn" onclick="window.location.href='tel:+905555555555'">
+        <span style="font-size:1.3em;">📞</span> Hemen Ara
+    </button>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -94,7 +131,7 @@
                 <!-- Desktop Menu -->
                 <div class="nav-menu">
                     <a href="index.html" class="nav-link">Ana Sayfa</a>
-                    <a href="#" class="nav-link">Hakkımızda</a>
+                    <a href="digerleri.html?page=hakkimizda" class="nav-link">Hakkımızda</a>
                     
                     <!-- Services Dropdown -->
                     <div class="dropdown">
@@ -190,7 +227,7 @@
                     <h2>Navigasyon</h2>
                     <ul>
                         <li><a href="index.html" class="footer-link">Ana Sayfa</a></li>
-                        <li><a href="hizmetlergenel.html" class="footer-link">Hizmetler</a></li>
+                        <li><a href="hizmetler.html" class="footer-link">Hizmetler</a></li>
                         <li><a href="digerleri.html?page=hakkimizda" class="footer-link">Hakkımızda</a></li>
                         <li><a href="digerleri.html?page=iletisim" class="footer-link">İletişim</a></li>
                         <li><a href="digerleri.html?page=kvkk" class="footer-link">KVKK</a></li>
@@ -339,72 +376,119 @@
             'kvkk': {
                 title: 'KVKK - Kişisel Verilerin Korunması',
                 content: `
-                    <p class="content-text">6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında kişisel verilerinizin işlenmesine ilişkin bilgilendirme metni aşağıdadır.</p>
-                    
-                    <h2 class="content-subtitle">Veri Sorumlusu</h2>
-                    <p class="content-text">TeknikServis olarak, kişisel verilerinizin işlenmesinde veri sorumlusu sıfatıyla hareket etmekteyiz.</p>
-                    
-                    <h2 class="content-subtitle">Kişisel Verilerin İşlenme Amaçları</h2>
-                    <div class="list-item">• Teknik servis hizmetinin sağlanması</div>
-                    <div class="list-item">• İletişim kurulması ve randevu alınması</div>
-                    <div class="list-item">• Hizmet kalitesinin artırılması</div>
-                    <div class="list-item">• Yasal yükümlülüklerin yerine getirilmesi</div>
-                    <div class="list-item">• Müşteri memnuniyetinin ölçülmesi</div>
-                    
-                    <h2 class="content-subtitle">İşlenen Kişisel Veri Türleri</h2>
-                    <div class="list-item">• Ad, soyad bilgisi</div>
-                    <div class="list-item">• Telefon numarası</div>
-                    <div class="list-item">• E-posta adresi</div>
-                    <div class="list-item">• Adres bilgisi</div>
-                    <div class="list-item">• Cihaz arıza bilgileri</div>
-                    
-                    <h2 class="content-subtitle">Kişisel Verilerin Aktarılması</h2>
-                    <p class="content-text">Kişisel verileriniz, hizmet kalitesinin artırılması, yasal yükümlülüklerin yerine getirilmesi amacıyla yetkili kamu kurum ve kuruluşları ile paylaşılabilir.</p>
-                    
-                    <div class="highlight-box">
-                        <h2 class="content-subtitle">KVKK Kapsamındaki Haklarınız</h2>
-                        <div class="list-item">• Kişisel verilerinizin işlenip işlenmediğini öğrenme</div>
-                        <div class="list-item">• İşlenen kişisel veriler hakkında bilgi talep etme</div>
-                        <div class="list-item">• Kişisel verilerin düzeltilmesini talep etme</div>
-                        <div class="list-item">• Kişisel verilerin silinmesini talep etme</div>
-                        <div class="list-item">• İşleme faaliyetine itiraz etme</div>
+                    <div class="kvkk-text" style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; margin-bottom: 30px; font-family: Arial, sans-serif; color: #444;">
+                        <h2 style="color: #1565C0; margin-bottom: 15px; font-size: 24px;">📋 Veri Sorumlusu</h2>
+                        <p style="font-size: 16px; line-height: 1.6;">
+                            Beyaz Eşya Teknik Servis olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla,
+                            kişisel verilerinizin korunması ve gizliliğinin sağlanması konusunda gerekli tüm teknik ve idari tedbirleri almaktayız.
+                        </p>
+
+                        <h2 style="color: #1565C0; margin-top: 30px; margin-bottom: 15px; font-size: 24px;">🔍 Kişisel Veri Toplama</h2>
+                        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 10px;">
+                            Beyaz Eşya Teknik Servis olarak, müşterilerimizin gizliliğine saygı duyuyoruz ve <strong>herhangi bir kişisel veri toplamıyoruz</strong>.
+                            Web sitemizi ziyaret ettiğinizde hiçbir kişisel bilginiz kaydedilmez veya saklanmaz.
+                        </p>
+                        <p style="font-size: 16px; line-height: 1.6;">
+                            Servis hizmeti talebinde bulunduğunuzda, yalnızca hizmet sunumu için gerekli olan temel bilgiler (ad, telefon, adres)
+                            geçici olarak alınır ve hizmet tamamlandıktan sonra silinir.
+                        </p>
+
+                        <h2 style="color: #1565C0; margin-top: 30px; margin-bottom: 15px; font-size: 24px;">🎯 Veri İşleme Politikamız</h2>
+                        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 10px;">
+                            Gizliliğinize saygı duyduğumuz için:
+                        </p>
+                        <ul style="font-size: 16px; line-height: 1.6; margin-left: 20px; color: #444;">
+                            <li>Herhangi bir kişisel veri saklamıyoruz</li>
+                            <li>Web sitemizde çerez kullanmıyoruz</li>
+                            <li>Üçüncü taraf analitik araçları kullanmıyoruz</li>
+                            <li>Pazarlama amaçlı veri toplamıyoruz</li>
+                            <li>Sosyal medya entegrasyonu yapmıyoruz</li>
+                        </ul>
+
+                        <h2 style="color: #1565C0; margin-top: 30px; margin-bottom: 15px; font-size: 24px;">⚖️ Hukuki Durum</h2>
+                        <p style="font-size: 16px; line-height: 1.6;">
+                            Herhangi bir kişisel veri toplamadığımız için KVKK kapsamında veri sorumlusu değiliz.
+                            Web sitemiz yalnızca bilgilendirme amaçlıdır ve hiçbir kişisel bilgi talep etmez veya saklamaz.
+                        </p>
+
+                        <h2 style="color: #1565C0; margin-top: 30px; margin-bottom: 15px; font-size: 24px;">🔐 Gizlilik Taahhüdümüz</h2>
+                        <p style="font-size: 16px; line-height: 1.6;">
+                            Web sitemizde herhangi bir kişisel veri toplanmadığı için güvenlik riski bulunmamaktadır.
+                            Sadece hizmet talebi sırasında geçici olarak alınan bilgiler, hizmet sonrasında tamamen silinir.
+                        </p>
+
+                        <h2 style="color: #1565C0; margin-top: 30px; margin-bottom: 15px; font-size: 24px;">📞 İletişim</h2>
+                        <p style="font-size: 16px; line-height: 1.6;">
+                            KVKK kapsamındaki haklarınızla ilgili taleplerinizi <strong>info@beyazesyaservis.com</strong> adresine
+                            veya <strong>0212 555 0123</strong> numaralı telefondan bize iletebilirsiniz.
+                        </p>
                     </div>
-                    
-                    <p class="content-text">KVKK kapsamındaki haklarınızı kullanmak için info@sirket.com adresine e-posta gönderebilirsiniz.</p>
                 `
             },
             'gizlilik': {
                 title: 'Gizlilik Politikası',
                 content: `
-                    <p class="content-text">TeknikServis olarak müşterilerimizin gizliliğini korumayı taahhüt ediyoruz. Bu gizlilik politikası, topladığımız bilgilerin nasıl kullanıldığını açıklar.</p>
-                    
-                    <h2 class="content-subtitle">Topladığımız Bilgiler</h2>
-                    <div class="list-item">• Servis talebi sırasında verdiğiniz kişisel bilgiler</div>
-                    <div class="list-item">• İletişim bilgileri (telefon, e-posta, adres)</div>
-                    <div class="list-item">• Cihaz ve arıza bilgileri</div>
-                    <div class="list-item">• Hizmet geçmişi bilgileri</div>
-                    
-                    <h2 class="content-subtitle">Bilgilerin Kullanım Amaçları</h2>
-                    <div class="list-item">• Teknik servis hizmetinin sunulması</div>
-                    <div class="list-item">• Müşteri desteği sağlanması</div>
-                    <div class="list-item">• Hizmet kalitesinin geliştirilmesi</div>
-                    <div class="list-item">• Yasal gerekliliklerin karşılanması</div>
-                    
-                    <h2 class="content-subtitle">Bilgi Güvenliği</h2>
-                    <p class="content-text">Kişisel bilgilerinizi korumak için gerekli teknik ve idari tedbirleri almaktayız. Bilgileriniz yetkisiz erişime karşı güvence altındadır.</p>
-                    
-                    <div class="highlight-box">
-                        <h2 class="content-subtitle">Çerezler (Cookies)</h2>
-                        <p class="content-text">Web sitemizde kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanılabilir. Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz.</p>
+                    <div class="privacy-policy" style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px; font-family: Arial, sans-serif; color: #333;">
+                        <h2 style="color: #0D6EFD; margin-bottom: 20px; font-size: 26px; border-bottom: 2px solid #0D6EFD; padding-bottom: 10px;">📋 Gizlilik İlkelerimiz</h2>
+                        <p style="line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                            Beyaz Eşya olarak, müşterilerimizin gizliliğine büyük önem veriyoruz. <strong>Web sitemizde herhangi bir kişisel veri toplamıyoruz</strong>.
+                            Bu gizlilik politikası, veri toplama politikamızı ve gizlilik standartlarımızı açıklar.
+                        </p>
+
+                        <h3 style="color: #0D6EFD; margin: 30px 0 20px; font-size: 22px;">📝 Veri Toplama Politikamız</h3>
+                        <p style="line-height: 1.8; margin-bottom: 15px; font-size: 18px;">
+                            Gizliliğinizi korumak için web sitemizde şu politikaları uyguluyoruz:
+                        </p>
+                        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 30px; font-size: 18px;">
+                            <li>Hiçbir kişisel veri toplamıyoruz</li>
+                            <li>Çerez (cookie) kullanmıyoruz</li>
+                            <li>Analitik araçları kullanmıyoruz</li>
+                            <li>Üçüncü taraf entegrasyonu yapmıyoruz</li>
+                            <li>Pazarlama verisi saklamıyoruz</li>
+                        </ul>
+
+                        <h3 style="color: #0D6EFD; margin: 30px 0 20px; font-size: 22px;">⚙️ Hizmet Sunumu</h3>
+                        <p style="line-height: 1.8; margin-bottom: 15px; font-size: 18px;">
+                            Sadece servis hizmeti talebinde bulunduğunuzda:
+                        </p>
+                        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 30px; font-size: 18px;">
+                            <li>Gerekli temel bilgiler geçici olarak alınır</li>
+                            <li>Sadece hizmet koordinasyonu için kullanılır</li>
+                            <li>Hizmet sonrasında tüm bilgiler silinir</li>
+                            <li>Hiçbir yerde saklanmaz veya kayıt altına alınmaz</li>
+                            <li>Üçüncü taraflarla paylaşılmaz</li>
+                        </ul>
+
+                        <h3 style="color: #0D6EFD; margin: 30px 0 20px; font-size: 22px;">📊 Veri Analitiği</h3>
+                        <p style="line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                            Kişisel bilgilerinizi korumak için endüstri standardı güvenlik önlemleri kullanıyoruz.
+                            Bilgileriniz şifreleme teknolojileri ve güvenli sunucular aracılığıyla korunmaktadır.
+                            Verilerinize yalnızca yetkili personelimiz erişebilir.
+                        </p>
+
+                        <h3 style="color: #0D6EFD; margin: 30px 0 20px; font-size: 22px;">🍪 Çerez Kullanımı</h3>
+                        <p style="line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                            Web sitemizde <strong>hiçbir çerez (cookie) kullanmıyoruz</strong>. Tarayıcınızda herhangi bir veri saklanmaz
+                            ve takip edilmezsiniz. Bu sayede tam gizlilik korunmaktadır.
+                        </p>
+
+                        <h3 style="color: #0D6EFD; margin: 30px 0 20px; font-size: 22px;">🔄 Bilgi Paylaşımı</h3>
+                        <p style="line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                            Herhangi bir kişisel veri toplamadığımız için üçüncü taraflarla paylaşacak bir bilgi bulunmamaktadır.
+                            Web sitemiz tamamen gizlilik odaklıdır.
+                        </p>
+
+                        <h3 style="color: #0D6EFD; margin: 30px 0 20px; font-size: 22px;">📧 İletişim</h3>
+                        <p style="line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                            Gizlilik politikamız hakkında sorularınız varsa bizimle iletişime geçebilirsiniz. Gizlilik haklarınızı kullanmak için aşağıdaki iletişim bilgilerini kullanabilirsiniz.
+                        </p>
+
+                        <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px solid #eee;">
+                            <a href="tel:+905555555555" style="display: inline-block; background-color: #0D6EFD; color: white; padding: 15px 40px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: bold; transition: background-color 0.3s;">
+                                📞 7/24 Hizmetinizdeyiz
+                            </a>
+                        </div>
                     </div>
-                    
-                    <h2 class="content-subtitle">Üçüncü Taraf Paylaşımı</h2>
-                    <p class="content-text">Kişisel bilgilerinizi üçüncü taraflarla paylaşmıyoruz. Sadece yasal yükümlülükler çerçevesinde yetkili kurumlara bilgi verilebilir.</p>
-                    
-                    <h2 class="content-subtitle">İletişim</h2>
-                    <p class="content-text">Gizlilik politikamız hakkında sorularınız için info@sirket.com adresinden bizimle iletişime geçebilirsiniz.</p>
-                    
-                    <p class="content-text"><strong>Son Güncelleme:</strong> ${new Date().toLocaleDateString('tr-TR')}</p>
                 `
             }
         };
