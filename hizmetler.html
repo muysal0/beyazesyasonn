@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profesyonel beyaz eşya tamiri ve bakım hizmetleri. Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon servisi. İstanbul genelinde hızlı ve güvenilir teknik servis.">
+    <title>TeknikServis - Beyaz Eşya Tamiri ve Bakım Hizmetleri</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,sans-serif;min-height:100vh;background:linear-gradient(135deg,#eff6ff,#e0e7ff);display:flex;flex-direction:column}
+        .navbar{background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:sticky;top:0;z-index:50}
+        .nav-container{max-width:1280px;margin:0 auto;padding:0 1rem}
+        .nav-content{display:flex;justify-content:space-between;align-items:center;height:4rem}
+        .logo{font-size:1.5rem;font-weight:700;color:#4f46e5;text-decoration:none}
+        .logo:hover{color:#3730a3}
+        .nav-menu{display:none;align-items:center;gap:2rem}
+        .nav-link{color:#374151;text-decoration:none;padding:.5rem .75rem;border-radius:.375rem;font-weight:500}
+        .nav-link:hover{color:#4f46e5}
+        .dropdown{position:relative}
+        .dropdown-toggle{display:flex;align-items:center;gap:.25rem;cursor:pointer}
+        .dropdown-menu{position:absolute;top:100%;left:0;background:#fff;border-radius:.5rem;box-shadow:0 4px 6px rgba(0,0,0,.1);min-width:14rem;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .2s;z-index:50}
+        .dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+        .dropdown-item{display:block;padding:.5rem 1rem;color:#374151;text-decoration:none}
+        .dropdown-item:hover{background:#eef2ff;color:#4f46e5}
+        .mobile-toggle{display:block;background:none;border:none;cursor:pointer;padding:.5rem}
+        .mobile-menu{display:none;background:#fff;border-top:1px solid #e5e7eb;padding:1rem}
+        .mobile-nav-link{display:block;padding:.75rem;color:#374151;text-decoration:none;border-radius:.375rem}
+        .mobile-nav-link:hover{background:#eef2ff;color:#4f46e5}
+        .mobile-dropdown{margin-left:1rem;display:none}
+        .menu-checkbox{display:none}
+        .menu-checkbox:checked~.mobile-menu{display:block}
+        .services-checkbox{display:none}
+        .services-checkbox:checked~.mobile-dropdown{display:block}
+        .main-content{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1rem}
+        .hero{text-align:center;max-width:48rem}
+        .hero h1{font-size:2.5rem;font-weight:700;color:#1f2937;margin-bottom:1.5rem}
+        .hero p{font-size:1.125rem;color:#6b7280;margin-bottom:2rem;line-height:1.6}
+        .cta-button{background:#4f46e5;color:#fff;padding:.75rem 2rem;border-radius:.5rem;text-decoration:none;font-weight:600;display:inline-block;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+        .cta-button:hover{background:#3730a3;transform:translateY(-1px)}
+        .footer{background:#1f2937;color:#fff;padding:3rem 1rem}
+        .footer-container{max-width:1280px;margin:0 auto}
+        .footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:2rem}
+        .footer-section h4{font-size:1.125rem;font-weight:600;margin-bottom:1rem;color:#fff}
+        .footer-section ul{list-style:none}
+        .footer-section li{margin-bottom:.5rem}
+        .footer-link{color:#d1d5db;text-decoration:none}
+        .footer-link:hover{color:#fff}
+        .contact-item{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;color:#d1d5db}
+        .company-text{color:#d1d5db;font-size:.875rem;line-height:1.5}
+        .highlight{color:#fbbf24;font-weight:600}
+        .footer-bottom{border-top:1px solid #374151;padding-top:2rem;text-align:center;color:#d1d5db}
+        .icon{width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2}
+        .dropdown-icon{width:1rem;height:1rem}
+        .dropdown:hover .dropdown-icon{transform:rotate(180deg)}
+        @media(min-width:768px){
+            .nav-menu{display:flex}
+            .mobile-toggle{display:none}
+            .hero h1{font-size:3.75rem}
+            .footer-grid{grid-template-columns:repeat(4,1fr)}
+            .footer-section{text-align:left}
+        }
+        @media(max-width:767px){
+            .footer-section{text-align:center}
+            .contact-item{justify-content:center}
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="#" class="logo">TeknikServis</a>
+                
+                <!-- Desktop Menu -->
+                <div class="nav-menu">
+                    <a href="#" class="nav-link">Ana Sayfa</a>
+                    <a href="#" class="nav-link">Hakkımızda</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown">
+                        <div class="nav-link dropdown-toggle">
+                            Servislerimiz
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6,9 12,15 18,9"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Beyaz Eşya Servisi</a>
+                            <a href="#" class="dropdown-item">Buzdolabı</a>
+                            <a href="#" class="dropdown-item">Çamaşır Makinesi</a>
+                            <a href="#" class="dropdown-item">Bulaşık Makinesi</a>
+                            <a href="#" class="dropdown-item">Fırın</a>
+                            <a href="#" class="dropdown-item">Klima</a>
+                            <a href="#" class="dropdown-item">Kombi</a>
+                            <a href="#" class="dropdown-item">Televizyon</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="nav-link">İletişim</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <label for="menu-toggle" class="mobile-toggle">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </label>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <div class="mobile-menu">
+                <a href="#" class="mobile-nav-link">Ana Sayfa</a>
+                <a href="#" class="mobile-nav-link">Hakkımızda</a>
+                
+                <!-- Mobile Services -->
+                <label for="services-toggle" class="mobile-nav-link">
+                    Servislerimiz
+                    <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="float: right;">
+                        <polyline points="6,9 12,15 18,9"/>
+                    </svg>
+                </label>
+                <input type="checkbox" id="services-toggle" class="services-checkbox">
+                <div class="mobile-dropdown">
+                    <a href="#" class="mobile-nav-link">Beyaz Eşya Servisi</a>
+                    <a href="#" class="mobile-nav-link">Buzdolabı</a>
+                    <a href="#" class="mobile-nav-link">Çamaşır Makinesi</a>
+                    <a href="#" class="mobile-nav-link">Bulaşık Makinesi</a>
+                    <a href="#" class="mobile-nav-link">Fırın</a>
+                    <a href="#" class="mobile-nav-link">Klima</a>
+                    <a href="#" class="mobile-nav-link">Kombi</a>
+                    <a href="#" class="mobile-nav-link">Televizyon</a>
+                </div>
+                
+                <a href="#" class="mobile-nav-link">İletişim</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="hero">
+            <h1>Hoş Geldiniz</h1>
+            <p>Bu sayfa mobil uyumlu navbar ve footer ile tasarlanmıştır. Menü butonunu test etmek için mobil görünümde deneyin.</p>
+            <a href="#" class="cta-button">Başlayın</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Navigation -->
+                <div class="footer-section">
+                    <h4>Navigasyon</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link">Ana Sayfa</a></li>
+                        <li><a href="#" class="footer-link">Hizmetler</a></li>
+                        <li><a href="#" class="footer-link">Hakkımızda</a></li>
+                        <li><a href="#" class="footer-link">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link">Beyaz Eşya Servisi</a></li>
+                        <li><a href="#" class="footer-link">Buzdolabı</a></li>
+                        <li><a href="#" class="footer-link">Çamaşır Makinesi</a></li>
+                        <li><a href="#" class="footer-link">Bulaşık Makinesi</a></li>
+                        <li><a href="#" class="footer-link">Fırın</a></li>
+                        <li><a href="#" class="footer-link">Klima</a></li>
+                        <li><a href="#" class="footer-link">Kombi</a></li>
+                        <li><a href="#" class="footer-link">Televizyon</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <div class="contact-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        +90 555 123 45 67
+                    </div>
+                    <div class="contact-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        info@sirket.com
+                    </div>
+                    <div class="contact-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        İstanbul, Türkiye
+                    </div>
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h4>TeknikServis</h4>
+                    <p class="company-text">
+                        Profesyonel beyaz eşya tamiri ve bakım hizmetleri sunuyoruz. 
+                        <span class="highlight">Bu işletme hiçbir markanın yetkili servisi değildir.</span> 
+                        Sadece garantisi olmayan cihazlar için hizmet verilmektedir.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 TeknikServis. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96cd779a42ccb817',t:'MTc1NDgwNzY2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
