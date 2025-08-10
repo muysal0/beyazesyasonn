@@ -55,6 +55,28 @@
         .feature-icon{width:4rem;height:4rem;background:#2563eb;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:#fff;font-size:1.5rem}
         .feature-title{font-size:1.25rem;font-weight:600;color:#1f2937;margin-bottom:.5rem}
         .feature-description{color:#6b7280;line-height:1.5}
+
+        /* Custom Call Button */
+        .call-btn-custom {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #2563eb;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.44rem;
+            padding: 1.25rem 3.125rem;
+            border-radius: 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .call-btn-custom:hover {
+            background: #1565C0;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+        }
         
         /* CTA Section */
         .cta-section{text-align:center;margin:4rem 0;padding:3rem 2rem;background:linear-gradient(135deg,#2563eb,#1d4ed8);border-radius:1rem;color:#fff}
@@ -264,13 +286,11 @@
                         </p>
                     </div>
                 </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section class="cta-section">
-                <h2 class="cta-title">HEMEN ARA</h2>
-                <div class="cta-phone">+90 555 123 45 67</div>
-                <a href="tel:+905551234567" class="cta-button">Şimdi Ara</a>
+                <div style="text-align:center; margin-top:2rem;">
+                    <a href="tel:+905551234567" class="call-btn-custom">
+                        <span style="font-size:1.3em;">📞</span> Bizi Arayın
+                    </a>
+                </div>
             </section>
 
             <!-- Reviews Section -->
