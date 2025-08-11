@@ -497,6 +497,217 @@
           margin-bottom: 0.2em;
         }
     }
+
+    /* Responsive Content Styles */
+    .content-section {
+      max-width: 900px;
+      margin: 32px auto;
+      padding: 24px 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      font-size: 15px;
+      line-height: 1.7;
+      color: #222;
+      text-align: justify;
+      word-break: break-word;
+    }
+
+    .content-section h2 {
+      font-size: 22px;
+      color: #003366;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .content-section h3 {
+      font-size: 18px;
+      color: #006600;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+
+    .content-section p {
+      margin-bottom: 16px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    .content-section ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .content-section li {
+      margin-bottom: 8px;
+    }
+
+    .content-section strong {
+      font-weight: 600;
+    }
+
+    .content-section em {
+      font-style: italic;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 768px) {
+      .content-section {
+        margin: 24px 16px;
+        padding: 20px 16px;
+        border-radius: 6px;
+      }
+
+      .content-section h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+
+      .content-section h3 {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 12px;
+      }
+
+      .content-section p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 14px;
+      }
+
+      .content-section ul {
+        margin-left: 16px;
+        margin-bottom: 14px;
+      }
+
+      .services-grid {
+        gap: 0.8rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .service-card {
+        padding: 1.5rem 0.8rem 1.2rem 0.8rem;
+      }
+
+      .service-icon {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+
+      .service-title {
+        font-size: 1.1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content-section {
+        margin: 16px 12px;
+        padding: 16px 12px;
+        border-radius: 4px;
+      }
+
+      .content-section h2 {
+        font-size: 18px;
+        margin-bottom: 14px;
+      }
+
+      .content-section h3 {
+        font-size: 15px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+      }
+
+      .content-section p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .content-section ul {
+        margin-left: 14px;
+        margin-bottom: 12px;
+      }
+
+      .services-grid {
+        gap: 0.6rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+
+      .service-card {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+      }
+
+      .service-icon {
+        font-size: 1.8em;
+        margin-bottom: 0.4em;
+      }
+
+      .service-title {
+        font-size: 1em;
+      }
+
+      .sticky-btn {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 20px;
+        padding: 14px 20px;
+        font-size: 0.9rem;
+        width: auto;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .content-section {
+        margin: 12px 8px;
+        padding: 12px 8px;
+      }
+
+      .content-section h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+
+      .content-section h3 {
+        font-size: 14px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+
+      .content-section p {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+
+      .content-section ul {
+        margin-left: 12px;
+        margin-bottom: 10px;
+      }
+
+      .services-grid {
+        gap: 0.4rem;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+      }
+
+      .service-card {
+        padding: 1rem 0.3rem 0.8rem 0.3rem;
+      }
+
+      .service-icon {
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+      }
+
+      .service-title {
+        font-size: 0.9em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -661,23 +872,11 @@
         </div>
       </div>
     </section>
-<section style="
-  max-width: 900px;
-  margin: 32px auto;
-  padding: 24px 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  font-size: 15px;
-  line-height: 1.7;
-  color: #222;
-  text-align: justify;
-  word-break: break-word;
-">
-    <h2 style="font-size: 22px; color: #003366; margin-bottom: 20px; text-align: center;">
+<section class="content-section">
+    <h2>
       Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi Ve Televizyon
     </h2>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
       <p>
         Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi ve Televizyon gibi ev aletleri, günlük yaşamda büyük kolaylık sağlar. Bu cihazların düzgün çalışması, ev işlerini kolaylaştırır ve zaman kazandırır.
       </p>
@@ -698,7 +897,7 @@
         Günümüzde beyaz eşya servisi, ev alanında önemli bir yere sahip. Her bir cihaz farklı teknik bakım ve onarım süreçlerine ihtiyaç duyar. Örneğin, buzdolapları soğutma sistemlerinin düzgün çalışmasını sağlamak için düzenli bakıma ihtiyaç duyar. Çamaşır ve bulaşık makinelerinde su sızdırma gibi sorunlar detaylı inceleme gerektirir. Fırınlar ise arıza durumlarında profesyonel destek ister.
       </p>
     
-      <h3 style="margin-top: 24px;">Beyaz Eşya Servisinin Avantajları</h3>
+      <h3>Beyaz Eşya Servisinin Avantajları</h3>
     
       <ul>
         <li><strong>Uzman bakım:</strong> Teknik ekip uzmanlar tarafından yapılır, hata payı düşer.</li>
@@ -712,7 +911,7 @@
         2022 yılında yapılan bir araştırma, hanelerin %68'inin acil servis ihtiyaçları için hizmet talep ettiğini gösteriyor. Düzenli kontrol ve bakım, evdeki beyaz eşyaların uzun ömürlü olmasını sağlar.
       </p>
     
-      <h3 style="margin-top: 24px;">Buzdolabı Neden Çok Ses Çıkarır?</h3>
+      <h3>Buzdolabı Neden Çok Ses Çıkarır?</h3>
     
       <p>
         Buzdolabının sesi birçok kullanıcı için rahatsız edici olabilir. Cihaz çalışırken bazı doğal sesler normaldir; fakat aşırı ses genellikle bir problemin işaretidir.
@@ -730,7 +929,7 @@
         Genelde bu tür sorunlara zamanında müdahale edilmezse, büyük onarım maliyetleri doğabilir. Servis desteği almak buzdolabınızın ömrünü uzatır ve ses sorunlarını giderir.
       </p>
     
-      <h3 style="margin-top: 24px;">Çamaşır Makinesi Nasıl Temizlenir?</h3>
+      <h3>Çamaşır Makinesi Nasıl Temizlenir?</h3>
     
       <p>
         Çamaşır makineleri zamanla kirlenir. Temizlik hem makinenin ömrünü uzatır hem de çamaşırların kalitesini artırır.
@@ -751,7 +950,7 @@
         Dikkatle yapılan temizlik, çamaşır makinelerinde %30'a kadar verim artışı sağlar.
       </p>
     
-      <h3 style="margin-top: 24px;">Bulaşık Makinesi Neden İyi Yıkamaz?</h3>
+      <h3>Bulaşık Makinesi Neden İyi Yıkamaz?</h3>
     
       <ul>
         <li><strong>Su sıcaklığı:</strong> 60 derece ve üstü olmalı</li>
@@ -765,21 +964,21 @@
         Bu noktalara dikkat ederek bulaşık makinenizin verimini artırabilir, gerektiğinde teknik destek alarak sorunları kalıcı olarak çözebilirsiniz.
       </p>
     
-      <h3 style="margin-top: 24px;">Sonuç</h3>
+      <h3>Sonuç</h3>
     
       <p>
         Beyaz eşya servisi, cihazların sağlıklı çalışması, enerji verimliliği ve uzun ömürlü olması açısından kritik öneme sahiptir. Güvenilir teknik destek, bakım ve onarım hizmetleri ile ev yaşamınızı kolaylaştırabilir ve ekonomik fayda sağlayabilirsiniz.
       </p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; line-height: 1.6; font-size: 16px; color: #222; padding: 20px; background-color: #f9f9f9; border-radius: 10px;">
+    <div class="content-section">
 
-      <p style="margin-bottom: 16px;">
+      <p>
         <strong>İstatistiklere göre</strong>, kullanıcıların %65'i bulaşık makinelerinin filtrelerini yeterince düzenli temizlememektedir. Bu durum, makine performansında düşüşe ve daha yüksek enerji tüketimine yol açar. Dolayısıyla, bu <strong>temizleme gereksinimlerini</strong> yerine getirmeniz gerekir. Ayrıca, bulaşık makinenizin tasarımına göre filtre temizliği değişebilir. Her modelin bakım talimatları farklıdır, bu yüzden kullandığınız makinenin kılavuzunu mutlaka gözden geçirin. Böylelikle, hem etkin temizleme işlemi yaparsınız hem de makinenizin <em>uzun ömürlü</em> olmasını sağlamış olursunuz. Kısacası, bu aracın senin için sağladığı avantajları en üst seviyeye çıkarabilirsin.
       </p>
     
-      <h2 style="color: #005f99; font-size: 20px; margin-top: 32px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
-        Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi Ve Televizyon
+      <h2>
+        Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşır Makinesi, Fırın, Klima, Kombi Ve Televizyon
       </h2>
     
       <p style="margin-bottom: 16px;">
@@ -790,8 +989,8 @@
         Tamir süreçleri, <em>uzman kişiler</em> tarafından gerçekleştirilmelidir. Uzmanlar, sorunun nedenini doğru bir şekilde teşhis eder. Ayrıca, bu süreçte kullanılan <strong>yedek parçaların kalitesi</strong> de oldukça önemlidir. Kalite yüksek olursa, cihazların ömrü uzar. Bunun yanı sıra, kullanıcılar için <strong>bakım hizmetleri</strong> de son derece faydalıdır. Cihazlarınızın düzenli bakımı, arızaları önlemeye yardımcı olur. Böylece daha uzun süre verimli bir kullanım sağlarsınız.
       </p>
     
-      <h3 style="font-size: 18px; color: #006600; margin-top: 24px;">Beyaz Eşya Bakımı İçin Dikkat Edilmesi Gerekenler</h3>
-      <ul style="margin-left: 20px; margin-bottom: 16px;">
+      <h3>Beyaz Eşya Bakımı İçin Dikkat Edilmesi Gerekenler</h3>
+      <ul>
         <li>Düzenli bakım: Cihazların bakımını belirli dönemlerde yaptırmak gerekir.</li>
         <li>Temizlik: Buzdolabınızın ve fırınınızın içini düzenli temizleyin.</li>
         <li>Aşırı yükleme: Çamaşır makinelerinin kapasitesine dikkat edin.</li>
@@ -807,7 +1006,7 @@
         Sonuç olarak, <strong>beyaz eşya servisi</strong>, yaşam kalitenizi artıran önemli bir hizmettir. Cihazlarınızın bakımına dikkat ettiğinizde, <em>uzun süre sorunsuz bir deneyim</em> yaşarsınız.
       </p>
     
-      <h2 style="color: #005f99; font-size: 20px; margin-top: 32px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Fırın Tepsisi Seçimi Nasıl Olmalı
       </h2>
     
@@ -815,7 +1014,7 @@
         Fırın tepsileri, pişirme sürecinde kritik bir rol oynar. Doğru tepsiyi seçmek, yemeklerin lezzetini olumlu yönde etkiler. Özellikle fırın kullanırken, <strong>malzeme ve boyut</strong> seçimi önem taşır. İlk olarak, tepsi malzemesine dikkat etmelisiniz. Genellikle alüminyum, paslanmaz çelik veya seramik tepsiler mevcuttur.
       </p>
     
-      <ul style="margin-left: 20px; margin-bottom: 16px;">
+      <ul>
         <li><strong>Alüminyum:</strong> Hafif ve ucuzdur fakat ısıyı eşit dağıtmaz.</li>
         <li><strong>Paslanmaz çelik:</strong> Dayanıklı ve sağlıklıdır.</li>
         <li><strong>Seramik:</strong> Estetik görünüm sunar ve yemekleri cazip hale getirir.</li>
@@ -825,7 +1024,7 @@
         İkinci önemli nokta ise tepsinin <strong>boyutudur</strong>. Tepsi boyutu, pişireceğiniz yemeğin büyüklüğüne göre değişir.
       </p>
     
-      <ul style="margin-left: 20px; margin-bottom: 16px;">
+      <ul>
         <li>Yemek miktarı: Sofra kalabalığına göre uygun bir boyut seçin.</li>
         <li>Fırın boyutu: Tepsinin fırınınıza tam oturması gerekir.</li>
         <li>Pişirme tarzı: Düz veya derin tepsiler, yemeğe göre tercih edilmelidir.</li>
@@ -836,16 +1035,16 @@
         Bu detayları göz önüne alarak, fırın tepsisi seçiminizi daha bilinçli yapabilirsiniz. Yapacağınız seçim, yemeklerinizi <strong>hızlı ve pratik</strong> bir şekilde pişirmenize yardımcı olur.
       </p>
     
-      <h2 style="color: #005f99; font-size: 20px; margin-top: 32px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Ana Konu: Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi ve Televizyon
       </h2>
     
-      <p style="margin-bottom: 0;">
+      <p>
         Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi Ve Televizyon konusunu ele alacağım. Günlük yaşamın vazgeçilmezi olan beyaz eşyalar, işlevsel bir şekilde çalışmalı. Bu cihazların düzenli bakımı, kullanım ömrünü uzatır ve işlevlerini en verimli şekilde yerine getirmelerini sağlar. Ev aletleri tamiri alanında <strong>uzman kişiler</strong>, birçok arızayı hızlı bir şekilde tespit eder. Bu durum, evde yaşanan sorunların <em>erken çözülmesine</em> yardımcı olur. Beyaz eşyaların bakım ve onarım süreçleri, kullanıcılara büyük kolaylık sunar. Kullanıcılar, servis hizmetlerinden faydalanarak cihazlarının <strong>uzun ömürlü</strong> olmasını sağlar. Ayrıca düzenli bakım, <strong>enerji tüketimini</strong> de olumlu yönde etkiler.
       </p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
       <p>
         Bu yazıda, beyaz eşyaların onarım ve bakım süreçlerini detaylı bir şekilde inceleyeceğim. <strong>Beyaz eşya servisi</strong> çeşitli hizmetler sunar. Bu hizmetler, sadece onarımla sınırlı değildir, aynı zamanda düzenli bakımlar da içerir. Bu sayede cihazlar, maksimum performansla çalışır. Etkili bir beyaz eşya hizmeti, çeşitli avantajlar sağlar:
       </p>
@@ -862,7 +1061,7 @@
         Bu maddelerin her biri, beyaz eşya servisinin ne denli önemli olduğunu gösterir. Sonuç olarak, beyaz eşya servisi hizmetine başvurmak, cihazların bakım sürecini kolaylaştırır. Temiz ve düzenli işler, günlük yaşamın konforunu artırır. Kullanıcılar, beyaz eşya servislerinden faydalanarak daha verimli bir kullanım sürecine girebilir. Bazı kullanıcılar, beyaz eşya tamirini göz ardı eder. Ancak, bu durum uzun vadede sıkıntılara yol açabilir. Doğru hizmeti aldığında, beyaz eşyalar her zaman sorunsuz çalışır. Dolayısıyla, belirli aralıklarla bakımlar yapılmalı ve sorunlar gözlemlenmelidir.
       </p>
     
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Klima Nem Alma Özelliği Nasıl Kullanılır
       </h2>
     
@@ -883,7 +1082,7 @@
         Bu adımları takip ederek, klima nem alma özelliğini en verimli şekilde kullanabilirsiniz. Unutmayın, düzenli bakım yaparak klimanızın ömrünü uzatırsınız. Ayrıca, beyaz eşya servisi ve teknik servis hizmetleri almak, cihazınızın en iyi performansta çalışmasını sağlar. Doğru uygulamalar, evde konforu artırır.
       </p>
     
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Günümüzde Beyaz Eşya Servisi
       </h2>
     
@@ -892,9 +1091,9 @@
       </p>
     
     </div> 
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
 
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Beyaz Eşya Servisinin Arıza Durumlarındaki Avantajları
       </h2>
     
@@ -914,7 +1113,7 @@
         Bu özellikler, beyaz eşyalarınıza düzenli bakım yaptırmanız gerektiğini gösterir. Ayrıca, 2023 yılında kullanıcıların %65'i teknik servis hizmetlerini tercih ediyor. Bu durum, teknik servis hizmetlerinin önemini gözler önüne seriyor. Unutulmamalıdır ki, herhangi bir arıza durumunda yapılacak olan hızlı müdahaleler, cihazların ömrünü uzatır. Düşük maliyetlerle karşılaşmak ise kullanıcıların hoşuna gider. Sonuç olarak, beyaz eşya servisi hizmetleri, eve konfor katarken aynı zamanda maddi tasarruf sağlar. Doğru servisle çalışmak, ev aletlerinizi uzun ömürlü hale getirir.
       </p>
     
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Kombi Su Basıncı Nasıl Yükseltilir
       </h2>
     
@@ -940,7 +1139,7 @@
         Su basıncınızı her zaman sağlıklı seviyelerde tutmalısınız. Yapılan bir araştırmaya göre, kombi su basıncı düşük olan sistemler, %25 daha fazla enerji harcar. Bu çerçevede, enerji tasarrufu için kombi su basıncını doğru seviyelerde tutmak, büyük önem taşır. Beyaz Eşya Servisi noktalarında bu tür işlemler için size teknik destek alabileceğiniz uzman yardımcıları bulabilirsiniz. Unutmayın ki, düzenli olarak bakım yaptırmak, çamaşır makinesi, buzdolabı, bulaşık makinesi ve klima gibi diğer ev aletlerinin performansını artırır.
       </p>
     
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Beyaz Eşya Servisi: Hangi Cihazlara Hizmet Verir?
       </h2>
     
@@ -949,7 +1148,7 @@
       </p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
 
       <p>
         Eğer ev aletleriniz arıza yapmaya başlarsa hemen bir uzmandan yardım almanız şart. <strong>Beyaz eşya servisi</strong>, buzdolabı ve diğer cihazlarınızı hızlı ve etkili bir şekilde onarır. Uzmanlar, karşılaştığınız sorunları anlar ve en uygun çözümleri sunar. Bunun yanı sıra, bakım işlemleri ile problemler henüz oluşmadan önlenir. Unutmayın ki, ev aletleri tamiri, yalnızca sorun çıkmadan önce alınan tedbirlerle etkili olur. Bu sayede, hem cihazların ömrünü uzatır hem de daha az enerji tüketirsiniz.
@@ -968,7 +1167,7 @@
         Günümüzde, bu hizmetlere olan talep her geçen yıl artmaktadır. İstatistiklere göre, 2023 yılında ev sahiplerinin %65'i, beyaz eşya servis hizmetlerine başvurmuştur. Bu, sizin de benzer bir hizmet almanız gerektiğinin göstergesidir. Düşük maliyetli bir bakım, sizin için büyük fayda sağlar. Özellikle en çok kullanılan cihazlar olan buzdolabı ve çamaşır makineleri için düzenli bakım gereklidir. Bu sayede, bu cihazların ömrünü uzatırsınız ve daha az enerji tüketirsiniz. Bu nedenle, ev aletlerine gereken önemi vermeliyiz. Uygun fiyatlarla hizmet sunan beyaz eşya servisleriyle çalışmak her zaman iyi bir tercihtir.
       </p>
     
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Televizyon İnternete Nasıl Bağlanır
       </h2>
     
@@ -997,7 +1196,7 @@
         Günümüzde, kullanıcıların %65'i televizyonlarını internete bağlamış durumda. Bu durum, video akış platformlarının popülaritesini artırmıştır. İnsanlar, streaming servislerinin sunduğu içeriklere ulaşmak için televizyonlarını kullanıyor. Özellikle oyun gibi çoklu ortam içerikleri için güçlü internet bağlantısı gerekmektedir. Yine de, her televizyonun bağlanabilme kapasitesi farklılık gösterebilir. Yavaş internet bağlantısı ya da ağ sorunları kullanıcı deneyimini olumsuz etkileyebilir. Bu nedenle, yeterli altyapıya sahip olmak önemlidir. Televizyonunuzu internetle hızlıca buluşturmak için bu basit adımları izlemek yeterlidir.
       </p>
     
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Beyaz Eşya Servisinin Günlük Yaşamdaki Önemi
       </h2>
     
@@ -1010,7 +1209,7 @@
       </p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
 
       <p>
         Hızlı ve etkili çözümler aradığınızda, soğutma sistemleri servisi devreye girer. Sorunları tespit eden uzmanlar, gerekli onarımları yapar. Bu süreçte size gereken destek, teknik servis hizmetlerinden gelir. Klima ve kombi gibi ısıtma cihazlarının bakımı da büyük önem taşır. Her yıl düzenli bakım yapılmadığında, enerji verimliliği azalır. Bunun sonucunda ise faturanıza yansır. Yıllık bakımlarda, %30'a kadar enerji tasarrufu sağlar. Cihazlarınızı kullanırken, bu tür detayları göz önünde bulundurmalısınız. Unutmayın ki, elektronik eşya onarımı için en iyi yöntem, uzman bir servisle çalışmaktır.
@@ -1029,7 +1228,7 @@
         Bu şekilde, beyaz eşya servisinden maksimum verim alabilirsiniz. Unutmayın, sorunla karşılaşmadan önlemler almak her zaman en iyi yaklaşımdır. Günlük hayatınızı kolaylaştıran bu aletlerin bakımını aksatmadan gerçekleştirmeniz halinde, onlardan en iyi şekilde faydalanırsınız.
       </p>
     
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Beyaz Eşya Servisi Fiyatları Neye Göre Değişir
       </h2>
     
@@ -1054,7 +1253,7 @@
         Sonuç olarak, beyaz eşya servisi fiyatları; arıza durumu, malzeme kalitesi ve hizmet süresi gibi çeşitli unsurlara bağlı olarak değişiklik gösterir. Size önerim, belli başlı servisleri karşılaştırarak hem fiyat hem de hizmet kalitesi açısından değerlendirmeler yapmanızdır. Bu sayede hem bütçenizi koruyabilirsiniz hem de kaliteli hizmet alma şansınız artar. Unutmayın, en uygun fiyatla en iyi hizmeti bulmak her zaman mümkün olacaktır.
       </p>
     
-      <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
+      <h2>
         Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi Ve Televizyon
       </h2>
     
@@ -1076,7 +1275,7 @@
       </p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
 
       <p>
         Beyaz eşya servisi, soğutma sistemleri servisi ve ısıtma cihazları bakımı gibi hizmetleri birlikte sunarak yaşam alanlarınızın konforunu artırır. Kendi cihazlarınızı güvenilir ellere emanet edebilirsiniz. Unutmayın, cihazlarınızın düzenli bakımı, hem performansını hem de ömrünü artırır. Bu nedenle, beyaz eşya servislerine düzenli aralıklarla başvurmanız gerekmektedir. Ev aletlerinizin her biri için farklı özellikler barındırdığından, uzman bir teknisyenden destek almak oldukça önemlidir.
@@ -1135,7 +1334,7 @@
       </p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
 
       <p>
         Öncelikle, deterjan gözünü çıkarman gerekir. Bunu zorlamadan yapmalısın. Genellikle, deterjan kutusunun hemen yanındaki düğme ya da mandala basarak açabilirsin. Ardından, ılık su ve sabun kullanarak deterjan gözünü güzelce yıka. Bu işlemi yaparken yumuşak bir bez kullanmalısın. Süngeri veya sert metal aletleri tercih etme, zira bu, yüzeyi çizebilir. Temizledikten sonra, deterjan gözünün tamamen kurumasını bekle. Kuru bırakılmış bir deterjan gözü, tekrar takıldığında makinede sıvının sızmasını engeller. Unutma, deterjan gözü temizlik işlemini 3 ayda bir yapmalısın.
@@ -1278,13 +1477,13 @@
       </p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
 
       <p>
         İçeriğinizde klimanız için yapılacak dış ünite montajını doğru bir şekilde planlarsanız, cihazınızın performansını artırırsınız. İlerleyen günlerde, doğru yapılan montaj sayesinde klimanızın etkili bir şekilde çalıştığını göreceksiniz. Aynı zamanda, önleyici bakım yapmayı da ihmal etmeyin. <strong>Beyaz Eşya Servisi</strong>, <strong>Buzdolabı</strong>, <strong>Çamaşır Makinesi</strong>, <strong>Bulaşık Makinesi</strong>, <strong>Fırın</strong>, <strong>Klima</strong>, <strong>Kombi</strong> ve <strong>Televizyon</strong> gibi tüm cihazların performansını sürekli yüksek tutmak, kullanıcılar için önemlidir.
       </p>
     
-      <h2 style="color: #005f99; font-size: 20px;">Beyaz Eşya Servisi ve Cihazların Önemi</h2>
+      <h2>Beyaz Eşya Servisi ve Cihazların Önemi</h2>
     
       <p>
         Ev aletlerinin düzgün çalışması, günlük yaşamda büyük bir öneme sahiptir. Beyaz eşyalar, konforu artıran ve yaşam alanlarını daha işlevsel kılan önemli cihazlardır. Bu nedenle, buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon gibi cihazların düzenli bakımları kritik bir önem taşır. Sen de bu sayede, bu cihazların ömrünü uzatabilirsin. Ayrıca, zaman içinde karşılaşabileceğin arızalar için beyaz eşya servisi hizmetlerine ihtiyaç duyabilirsin.
@@ -1300,7 +1499,7 @@
         Sonuç olarak, beyaz eşya servislerine düzenli olarak başvurmak, uzun vadede cihazların performansını artırır. Araştırmalara göre, beyaz eşyaların %30'u düzenli bakım yapılmadığında arıza gösterir. Bu nedenle, sorunları engellemek veya erken aşamada çözmek senin elindedir.
       </p>
     
-      <h2 style="color: #005f99; font-size: 20px;">Kombi Petek Temizliği Ne Zaman Yapılmalı?</h2>
+      <h2>Kombi Petek Temizliği Ne Zaman Yapılmalı?</h2>
     
       <p>
         Kombi petek temizliği, ısıtma sistemlerinin verimliliğini artırır. Düzenli bakım, enerji tasarrufu sağlar. Bu nedenle, kombi petek temizliği her yıl yapılmalıdır. Özellikle kış mevsimi öncesinde bu temizlik, sistemin sorunsuz çalışmasını sağlar. Peteklerde biriken kir ve tortular, ısıtma verimini düşürür.
@@ -1317,7 +1516,7 @@
         Uygun bakım, kombinin uzun ömürlü olmasını sağlar ve ısıtma maliyetlerini %20'ye kadar azaltabilir.
       </p>
     
-      <h2 style="color: #005f99; font-size: 20px;">Beyaz Eşya Servisi Hizmetlerinin Faydaları</h2>
+      <h2>Beyaz Eşya Servisi Hizmetlerinin Faydaları</h2>
     
       <p>
         Beyaz eşya servisi, ev aletlerinin kurulum, bakım ve onarımını içerir. Kaliteli bir servis, cihazların uzun ömürlü çalışmasını sağlar. Özellikle yeni cihazlar aldığınızda kurulumun profesyonel yapılması oldukça önemlidir.
@@ -1334,7 +1533,7 @@
         2023 verilerine göre beyaz eşyaların %65'i düzenli teknik servisle bakımdan geçmektedir. Bu, cihazların arıza riskini azaltır ve kullanım süresini uzatır.
       </p>
     
-      <h2 style="color: #005f99; font-size: 20px;">Televizyon Smart Özellikleri Nasıl Kullanılır?</h2>
+      <h2>Televizyon Smart Özellikleri Nasıl Kullanılır?</h2>
     
       <p>
         Günümüz televizyonları, teknolojinin ilerlemesiyle birlikte birçok akıllı özellikle donatılmıştır. İnternet bağlantısı sayesinde TV programları, filmler, müzik ve uygulamalara erişim mümkündür. Smart televizyonlar kullanıcıların içeriklere kolayca ulaşmasını sağlar.
@@ -1345,9 +1544,9 @@
       </p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
 
-      <h2 style="color: #005f99;">Televizyon Smart Özellikleri Nasıl Kullanılır?</h2>
+      <h2>Televizyon Smart Özellikleri Nasıl Kullanılır?</h2>
     
       <p>Televizyonların akıllı (Smart) özelliklerini etkili kullanmanın bazı yolları vardır:</p>
     
@@ -1361,7 +1560,7 @@
     
       <p>Bu özellikleri kullanarak televizyonunuzdan en yüksek verimi alabilir, daha etkileşimli ve keyifli bir seyir deneyimi yaşayabilirsiniz. Smart TV'ler, modern eğlencenin merkezinde yer alır.</p>
     
-      <h2 style="color: #005f99;">Beyaz Eşya Servisinin Hayattaki Yeri</h2>
+      <h2>Beyaz Eşya Servisinin Hayattaki Yeri</h2>
     
       <p><strong>Beyaz Eşya Servisi</strong>, buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon gibi cihazların bakım ve onarımı için vazgeçilmezdir. Bu cihazlar arıza yaptığında konfor azalır, günlük yaşam aksar.</p>
     
@@ -1376,7 +1575,7 @@
     
       <p>2023'te yapılan bir araştırma, kullanıcıların %60'ı beyaz eşya arızalarında teknik servise başvuruyor. Bu da uzman desteğinin önemini göstermektedir.</p>
     
-      <h2 style="color: #005f99;">Ev Aletleri Tamiri İçin Güvenilir Servis Seçimi</h2>
+      <h2>Ev Aletleri Tamiri İçin Güvenilir Servis Seçimi</h2>
     
       <p>Ev aletleriniz için güvenilir bir teknik servis bulmak, uzun vadede hem zaman hem de maliyet tasarrufu sağlar.</p>
     
@@ -1390,14 +1589,14 @@
     
       <p>%75 oranında kullanıcı, servis seçiminde hız ve başarı oranına dikkat ettiğini belirtmektedir.</p>
     
-      <h2 style="color: #005f99;">Beyaz Eşya Tamiri ve Servis Hizmetlerinin Önemi</h2>
+      <h2>Beyaz Eşya Tamiri ve Servis Hizmetlerinin Önemi</h2>
     
       <p>Beyaz eşya tamiri, uzman teknisyenler tarafından yapıldığında cihazlar eski performansına döner. Ayrıca düzenli bakım sayesinde kullanım ömrü artar ve beklenmedik arızalar önlenir.</p>
     
       <p>2025 yılına girerken, servis sağlayıcılarının kalitesi de kullanıcı memnuniyetini doğrudan etkileyen bir faktördür. Bu nedenle cihazlarınızı uzmanlara emanet etmeniz, evdeki konforunuzu doğrudan artıracaktır.</p>
     
     </div>
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
+    <div class="content-section">
         <p>
             Beyaz eşya servisinin sağladığı birçok avantaj bulunmaktadır. Bu avantajlar arasında:
         </p>

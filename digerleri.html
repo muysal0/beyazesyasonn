@@ -204,6 +204,232 @@
         .back-link{display:inline-flex;align-items:center;gap:.5rem;color:#4f46e5;text-decoration:none;margin-bottom:2rem;padding:.5rem 1rem;border-radius:.5rem;background:#f8fafc;transition:all .3s}
         .back-link:hover{background:#e2e8f0;transform:translateX(-5px)}
         
+        /* Responsive Content Styles */
+        .about-box, .contact-box, .kvkk-text, .privacy-policy {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            font-family: Arial, sans-serif;
+        }
+        
+        .about-box h2, .contact-box h2, .kvkk-text h2, .privacy-policy h2 {
+            color: #0D6EFD;
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 2px solid #0D6EFD;
+            padding-bottom: 0.75rem;
+        }
+        
+        .about-box h3, .contact-box h3, .kvkk-text h3, .privacy-policy h3 {
+            color: #0D6EFD;
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        .about-box p, .contact-box p, .kvkk-text p, .privacy-policy p {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .about-box ul, .contact-box ul, .kvkk-text ul, .privacy-policy ul {
+            line-height: 1.7;
+            margin: 1rem 0 1.5rem 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .about-box li, .contact-box li, .kvkk-text li, .privacy-policy li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-box a, .contact-box a, .kvkk-text a, .privacy-policy a {
+            color: #0D6EFD;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .about-box a:hover, .contact-box a:hover, .kvkk-text a:hover, .privacy-policy a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Section Styles */
+        .about-section, .contact-section {
+            margin-bottom: 2rem;
+        }
+        
+        .about-section:last-child, .contact-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .about-section h3, .contact-section h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .about-section h3 svg, .contact-section h3 svg {
+            flex-shrink: 0;
+        }
+        
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem 0.75rem;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem 1rem;
+                border-radius: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .about-box, .contact-box, .kvkk-text, .privacy-policy {
+                padding: 1.5rem 1rem;
+                border-radius: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .about-box h2, .contact-box h2, .kvkk-text h2, .privacy-policy h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .about-box h3, .contact-box h3, .kvkk-text h3, .privacy-policy h3 {
+                font-size: 1.125rem;
+                margin: 1.25rem 0 0.75rem 0;
+            }
+            
+            .about-box p, .contact-box p, .kvkk-text p, .privacy-policy p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            .about-box ul, .contact-box ul, .kvkk-text ul, .privacy-policy ul {
+                margin: 0.75rem 0 1.25rem 1.25rem;
+                font-size: 0.95rem;
+            }
+            
+            .about-section, .contact-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .back-link {
+                padding: 0.75rem 1rem;
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .container {
+                padding: 0 0.25rem;
+            }
+            
+            .content-section {
+                padding: 1.25rem 0.75rem;
+                border-radius: 0.5rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .page-title {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .about-box, .contact-box, .kvkk-text, .privacy-policy {
+                padding: 1.25rem 0.75rem;
+                border-radius: 0.5rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .about-box h2, .contact-box h2, .kvkk-text h2, .privacy-policy h2 {
+                font-size: 1.375rem;
+                margin-bottom: 0.875rem;
+            }
+            
+            .about-box h3, .contact-box h3, .kvkk-text h3, .privacy-policy h3 {
+                font-size: 1rem;
+                margin: 1rem 0 0.5rem 0;
+            }
+            
+            .about-box p, .contact-box p, .kvkk-text p, .privacy-policy p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            
+            .about-box ul, .contact-box ul, .kvkk-text ul, .privacy-policy ul {
+                margin: 0.5rem 0 1rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .about-section, .contact-section {
+                margin-bottom: 1.25rem;
+            }
+            
+            .back-link {
+                padding: 0.625rem 0.875rem;
+                font-size: 0.9rem;
+                margin-bottom: 1.25rem;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .sticky-btn {
+                right: 50%;
+                transform: translateX(50%);
+                bottom: 20px;
+                padding: 14px 20px;
+                font-size: 0.9rem;
+                width: auto;
+                white-space: nowrap;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .about-box, .contact-box, .kvkk-text, .privacy-policy {
+                padding: 1rem 0.5rem;
+            }
+            
+            .about-box h2, .contact-box h2, .kvkk-text h2, .privacy-policy h2 {
+                font-size: 1.25rem;
+            }
+            
+            .about-box p, .contact-box p, .kvkk-text p, .privacy-policy p {
+                font-size: 0.85rem;
+            }
+            
+            .about-box ul, .contact-box ul, .kvkk-text ul, .privacy-policy ul {
+                font-size: 0.85rem;
+                margin-left: 0.75rem;
+            }
+            
+            .about-section, .contact-section {
+                margin-bottom: 1rem;
+            }
+        }
+        
         .footer{background:#1f2937;color:#fff;padding:3rem 1rem}
         .footer-container{max-width:1280px;margin:0 auto}
         .footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:2rem}
@@ -454,23 +680,23 @@
             'hakkimizda': {
                         title: 'Hakkımızda',
                         content: `
-                            <div class="about-box" style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
-                                <div style="margin-bottom: 30px;">
-                                    <h2 style="color: #0D6EFD; font-size: 26px; margin-bottom: 15px; border-bottom: 2px solid #0D6EFD; padding-bottom: 10px;">Beyaz Eşya Teknik Servis</h2>
-                                    <p style="color: #333; font-size: 18px; line-height: 1.8;">
+                            <div class="about-box">
+                                <div class="about-section">
+                                    <h2>Beyaz Eşya Teknik Servis</h2>
+                                    <p>
                                         2010 yılından beri İstanbul genelinde beyaz eşya tamiri konusunda hizmet vermekteyiz.<br>
                                         Deneyimli teknisyen kadromuz ile tüm marka beyaz eşyalarınızın garantisi dolmuş ürünlerinin tamiri konusunda profesyonel hizmet sunuyoruz.
                                     </p>
                                 </div>
 
-                                <div style="margin-bottom: 25px;">
-                                    <h3 style="color: #0D6EFD; font-size: 22px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" style="vertical-align:middle;" aria-hidden="true">
+                                <div class="about-section">
+                                    <h3>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" aria-hidden="true">
                                             <path fill="#22c55e" d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
                                         </svg>
                                         Adres Bilgileri
                                     </h3>
-                                    <p style="color: #333; font-size: 18px; line-height: 1.8;">
+                                    <p>
                                         <strong>Merkez Ofis:</strong><br>
                                         Ataşehir Mahallesi, Teknoloji Caddesi No: 45/A<br>
                                         Ataşehir / İSTANBUL<br>
@@ -479,14 +705,14 @@
                                     </p>
                                 </div>
 
-                                <div style="margin-bottom: 25px;">
-                                    <h3 style="color: #0D6EFD; font-size: 22px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" style="vertical-align:middle;" aria-hidden="true">
+                                <div class="about-section">
+                                    <h3>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" aria-hidden="true">
                                             <path fill="#22c55e" d="M256.1 161.1L256.1 210.7L256.6 211.2C263.1 128.8 332 64 416.1 64C436.2 64 455.5 67.7 473.2 74.5C483.2 78.3 485 91 477.5 98.6L388.8 187.3C385.8 190.3 384.1 194.4 384.1 198.6L384.1 240C384.1 248.8 391.3 256 400.1 256L441.5 256C445.7 256 449.8 254.3 452.8 251.3L541.5 162.6C549.1 155 561.8 156.9 565.6 166.9C572.4 184.6 576.1 203.9 576.1 224C576.1 284.6 542.4 337.4 492.6 364.5L574.1 446C592.8 464.7 592.8 495.1 574.1 513.9L514 574C495.3 592.7 464.9 592.7 446.1 574L320.1 448C292.7 420.6 286.5 380.1 301.6 346.7L210.9 256L161.3 256C150.6 256 140.6 250.7 134.7 241.8L55.4 122.9C51.2 116.6 52 108.1 57.4 102.7L102.8 57.3C108.2 51.9 116.6 51.1 123 55.3L241.9 134.5C250.8 140.4 256.1 150.4 256.1 161.1zM247.6 360.6C241.3 397.6 250 436.7 274 468L179 562.9C150.9 591 105.3 591 77.2 562.9C49.1 534.8 49.1 489.2 77.2 461.1L212.6 325.7L247.6 360.7z"/>
                                         </svg>
                                         Hizmetlerimiz
                                     </h3>
-                                    <p style="color: #333; font-size: 18px; line-height: 1.8;">
+                                    <p>
                                         Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon tamiri konularında uzman teknisyen kadromuz ile 7/24 hizmet vermekteyiz.<br>
                                         Garantisi dolmuş tüm beyaz eşya ürünleriniz için hızlı ve güvenilir çözümler sunuyoruz.
                                     </p>
@@ -497,51 +723,50 @@
             'iletisim': {
                 title: 'İletişim',
                 content: `
-                    <div class="contact-box" style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
-                        <div style="margin-bottom: 30px;">
-                            <h2 style="color: #0D6EFD; font-size: 26px; margin-bottom: 15px; border-bottom: 2px solid #0D6EFD; padding-bottom: 10px;">Beyaz Eşya Teknik Servis</h2>
-                            <p style="color: #333; font-size: 18px; line-height: 1.8;">
+                    <div class="contact-box">
+                        <div class="contact-section">
+                            <h2>Beyaz Eşya Teknik Servis</h2>
+                            <p>
                                 7/24 hizmet veren deneyimli ekibimizle iletişime geçin. 
                                 Tüm beyaz eşya sorunlarınız için hızlı ve güvenilir çözümler sunuyoruz.
                             </p>
                         </div>
 
-                        <div style="margin-bottom: 25px;">
-                            <h3 style="color: #0D6EFD; font-size: 22px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" style="vertical-align:middle;" aria-hidden="true">
+                        <div class="contact-section">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" aria-hidden="true">
                                     <path fill="#22c55e" d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
                                 </svg>
                                 Adres
                             </h3>
-                            <p style="color: #333; font-size: 18px; line-height: 1.8;">
+                            <p>
                                 <strong>Merkez Ofis:</strong><br>
                                 Ataşehir Mahallesi, Teknoloji Caddesi No: 45/A<br>
                                 Ataşehir / İSTANBUL
                             </p>
                         </div>
 
-                        <div style="margin-bottom: 25px;">
-                                                        <h3 style="color: #0D6EFD; font-size: 22px; margin-bottom: 10px;">
-                                                            <span style="display:inline-flex;align-items:center;vertical-align:middle;">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" style="vertical-align:middle;" aria-hidden="true"><path fill="#dc2626" d="M376 32C504.1 32 608 135.9 608 264C608 277.3 597.3 288 584 288C570.7 288 560 277.3 560 264C560 162.4 477.6 80 376 80C362.7 80 352 69.3 352 56C352 42.7 362.7 32 376 32zM384 224C401.7 224 416 238.3 416 256C416 273.7 401.7 288 384 288C366.3 288 352 273.7 352 256C352 238.3 366.3 224 384 224zM352 152C352 138.7 362.7 128 376 128C451.1 128 512 188.9 512 264C512 277.3 501.3 288 488 288C474.7 288 464 277.3 464 264C464 215.4 424.6 176 376 176C362.7 176 352 165.3 352 152zM176.1 65.4C195.8 60 216.4 70.1 224.2 88.9L264.7 186.2C271.6 202.7 266.8 221.8 252.9 233.2L208.8 269.3C241.3 340.9 297.8 399.3 368.1 434.2L406.7 387C418 373.1 437.1 368.4 453.7 375.2L551 415.8C569.8 423.6 579.9 444.2 574.5 463.9L573 469.4C555.4 534.1 492.9 589.3 416.6 573.2C241.6 536.1 103.9 398.4 66.8 223.4C50.7 147.1 105.9 84.6 170.5 66.9L176 65.4z"/></svg>
-                                                            </span> İletişim Bilgileri
-                                                        </h3>
-                            <p style="color: #333; font-size: 18px; line-height: 1.8;">
-                                <strong>Telefon:</strong> <a href="tel:02125550123" style="color: #0D6EFD; text-decoration: none;">0212 555 0123</a><br>
-                                <strong>Cep Telefonu:</strong> <a href="tel:05551234567" style="color: #0D6EFD; text-decoration: none;">0555 123 45 67</a><br>
-                                <strong>E-posta:</strong> <a href="mailto:info@teknikservis.com" style="color: #0D6EFD; text-decoration: none;">info@beyazesyaservis.com</a><br>
-                                <strong>WhatsApp:</strong> <a href="https://wa.me/905551234567" style="color: #0D6EFD; text-decoration: none;">0555 123 45 67</a>
+                        <div class="contact-section">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" aria-hidden="true"><path fill="#dc2626" d="M376 32C504.1 32 608 135.9 608 264C608 277.3 597.3 288 584 288C570.7 288 560 277.3 560 264C560 162.4 477.6 80 376 80C362.7 80 352 69.3 352 56C352 42.7 362.7 32 376 32zM384 224C401.7 224 416 238.3 416 256C416 273.7 401.7 288 384 288C366.3 288 352 273.7 352 256C352 238.3 366.3 224 384 224zM352 152C352 138.7 362.7 128 376 128C451.1 128 512 188.9 512 264C512 277.3 501.3 288 488 288C474.7 288 464 277.3 464 264C464 215.4 424.6 176 376 176C362.7 176 352 165.3 352 152zM176.1 65.4C195.8 60 216.4 70.1 224.2 88.9L264.7 186.2C271.6 202.7 266.8 221.8 252.9 233.2L208.8 269.3C241.3 340.9 297.8 399.3 368.1 434.2L406.7 387C418 373.1 437.1 368.4 453.7 375.2L551 415.8C569.8 423.6 579.9 444.2 574.5 463.9L573 469.4C555.4 534.1 492.9 589.3 416.6 573.2C241.6 536.1 103.9 398.4 66.8 223.4C50.7 147.1 105.9 84.6 170.5 66.9L176 65.4z"/></svg>
+                                İletişim Bilgileri
+                            </h3>
+                            <p>
+                                <strong>Telefon:</strong> <a href="tel:02125550123">0212 555 0123</a><br>
+                                <strong>Cep Telefonu:</strong> <a href="tel:05551234567">0555 123 45 67</a><br>
+                                <strong>E-posta:</strong> <a href="mailto:info@teknikservis.com">info@beyazesyaservis.com</a><br>
+                                <strong>WhatsApp:</strong> <a href="https://wa.me/905551234567">0555 123 45 67</a>
                             </p>
                         </div>
 
-                        <div style="margin-bottom: 25px;">
-                            <h3 style="color: #0D6EFD; font-size: 22px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" style="vertical-align:middle;" aria-hidden="true">
+                        <div class="contact-section">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" aria-hidden="true">
                                     <path fill="#22c55e" d="M320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64zM296 184L296 320C296 328 300 335.5 306.7 340L402.7 404C413.7 411.4 428.6 408.4 436 397.3C443.4 386.2 440.4 371.4 429.3 364L344 307.2L344 184C344 170.7 333.3 160 320 160C306.7 160 296 170.7 296 184z"/>
                                 </svg>
                                 Çalışma Saatleri
                             </h3>
-                            <p style="color: #333; font-size: 18px; line-height: 1.8;">
+                            <p>
                                 <strong>Pazartesi - Cumartesi:</strong> 09:00 - 18:00<br>
                                 <strong>Pazar:</strong> 10:00 - 16:00<br>
                                 <strong>Acil Durum:</strong> 7/24 Hizmet
