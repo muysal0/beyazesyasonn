@@ -205,7 +205,7 @@
         .dropdown-icon{width:1rem;height:1rem}
         .dropdown:hover .dropdown-icon{transform:rotate(180deg)}
         .landing-container {
-          max-width: 700px;
+          max-width: 1000px;
           width: 100%;
           margin: 0 auto;
           background: #fff;
@@ -391,10 +391,17 @@
 
         /* Tablet ve Masaüstü */
         @media(min-width:768px){
-            .nav-menu{display:flex}
-            .mobile-toggle{display:none}
-            .footer-grid{grid-template-columns:repeat(4,1fr)}
-            .footer-section{text-align:left}
+          .nav-menu{display:flex}
+          .mobile-toggle{display:none}
+          .footer-grid{grid-template-columns:repeat(4,1fr)}
+          .footer-section{text-align:left}
+            .landing-container {
+              width: 100vw;
+              max-width: 95vw;
+              margin: 0;
+              padding: 4rem 2rem 3rem 2rem;
+              box-sizing: border-box;
+          }
         }
 
         /* Tablet ve Mobil */
