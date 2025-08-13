@@ -208,7 +208,7 @@
           max-width: 1000px;
           width: 100%;
           margin: 0 auto;
-          background: #fff;
+          background: rgb(255, 255, 255);
           border-radius: 2rem;
           box-shadow: 0 8px 32px rgba(37,99,235,0.10), 0 2px 12px rgba(0,0,0,0.06);
           padding: 3.5rem 2.5rem 2.5rem 2.5rem;
@@ -295,16 +295,11 @@
           justify-content: center;
         }
         .feature-box {
-          background: #f3f8ff;
-          border: 2px solid #dbeafe;
-          border-radius: 1.2rem;
-          box-shadow: 0 2px 8px rgba(37,99,235,0.07);
           flex: 1 1 0;
           min-width: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 1.3rem 0.7rem 1rem 0.7rem;
           gap: 0.6rem;
         }
         .feature-icon {
@@ -360,12 +355,15 @@
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
           }
+          .landing-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+          }
           .features-row {
-             flex-direction: column; /* Özellikleri alt alta sırala */
-             gap: 1rem;
+            display: contents; /* Remove the row structure */
           }
           .feature-box {
-            padding: 1rem 0.5rem;
             font-size: 1em;
           }
           .feature-label {
@@ -389,6 +387,39 @@
           }
         }
 
+
+        /* Reviews Section */
+        .reviews-section{margin-bottom:4rem}
+        .section-title{font-size:2rem;font-weight:700;color:#1f2937;text-align:center;margin-bottom:2rem}
+        .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .review-card{background:#f8fafc;padding:1.5rem;border-radius:1rem;border-left:4px solid #2563eb}
+        .review-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem}
+        .review-name{font-weight:600;color:#1f2937;margin:0}
+        .review-rating{display:flex;flex-direction:row;align-items:center;gap:.5rem}
+        .review-rating .stars{color:#fbbf24;font-size:1rem;line-height:1}
+        .review-rating .rating-number{font-size:.875rem;color:#6b7280;font-weight:500}
+        .review-text{color:#6b7280;line-height:1.6;font-style:italic;margin:0}
+        
+        /* FAQ Section */
+        .faq-section{margin-bottom:4rem}
+        .faq-item{margin-bottom:2rem}
+        .faq-question{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.5rem}
+        .faq-icon{color:#dc2626;font-size:1.25rem;margin-top:.125rem}
+        .faq-question-text{font-weight:600;color:#1f2937;font-size:1.1rem}
+        .faq-answer{color:#6b7280;line-height:1.6;margin-left:2rem}
+
+        /* Tablet */
+        @media (min-width: 601px) and (max-width: 1023px) {
+          .landing-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+          }
+          .features-row {
+            display: contents;
+          }
+        }
+
         /* Tablet ve Masaüstü */
         @media(min-width:768px){
           .nav-menu{display:flex}
@@ -401,6 +432,24 @@
               margin: 0;
               padding: 4rem 2rem 3rem 2rem;
               box-sizing: border-box;
+          }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+          .landing-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+          }
+          .features-row {
+            display: flex;
+            gap: 1.3rem;
+            justify-content: center;
+          }
+          .feature-box {
+            flex: 0 0 300px;
+            max-width: 300px;
           }
         }
 
@@ -417,6 +466,16 @@
                 width: auto;
                 white-space: nowrap;
             }
+            .reviews-grid{grid-template-columns:1fr;gap:1.5rem}
+            .section-title{font-size:1.75rem;margin-bottom:1.5rem}
+            .review-card{padding:1.25rem;border-radius:0.75rem}
+            .review-header{flex-direction:column;align-items:flex-start;gap:.5rem}
+            .review-rating{flex-direction:row;align-items:center;gap:.5rem}
+        }
+
+        /* Tablet only - 2 columns */
+        @media(min-width:768px) and (max-width:1023px){
+            .reviews-grid{grid-template-columns:repeat(2,1fr);gap:1.8rem}
         }
   </style>
 </head>
@@ -534,7 +593,7 @@
             <div class="feature-box">
               <span class="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2em" height="2em" style="max-width:100%;height:auto;display:block;margin:auto;">
-                  <path d="M466.6 114.2C461.2 115.9 455.3 116 450.4 113.3C444.6 110.1 438.6 107.1 432.6 104.4C422.2 99.7 418.9 86.1 428.5 79.8C443.5 69.9 461.5 64.1 480.8 64.1C533.4 64.1 576 106.7 576 159.3C576 172.5 573.3 185.1 568.4 196.6C563.9 207.1 550 206.4 543.5 197C539.7 191.5 535.7 186.2 531.5 181C528 176.6 527 170.8 527.7 165.2C527.9 163.3 528.1 161.3 528.1 159.3C528.1 133.2 506.9 112.1 480.9 112.1C476 112.1 471.2 112.9 466.7 114.3zM96.5 196.9C90 206.3 76 207 71.6 196.5C66.7 185 64 172.4 64 159.2C64 106.6 106.6 64 159.2 64C178.5 64 196.5 69.8 211.5 79.7C221.1 86 217.8 99.6 207.4 104.3C201.3 107.1 195.4 110 189.6 113.2C184.7 115.9 178.7 115.8 173.4 114.1C168.9 112.7 164.2 111.9 159.2 111.9C133.1 111.9 112 133.1 112 159.1C112 161.1 112.1 163.1 112.4 165C113.1 170.6 112.1 176.4 108.6 180.8C104.4 186 100.4 191.3 96.6 196.8zM496 352C496 254.8 417.2 176 320 176C222.8 176 144 254.8 144 352C144 449.2 222.8 528 320 528C417.2 528 496 449.2 496 352zM460.5 526.5C422.1 557.4 373.2 576 320 576C266.8 576 217.9 557.4 179.5 526.5L137 569C127.6 578.4 112.4 578.4 103.1 569C93.8 559.6 93.7 544.4 103.1 535.1L145.6 492.6C114.6 454.1 96 405.2 96 352C96 228.3 196.3 128 320 128C443.7 128 544 228.3 544 352C544 405.2 525.4 454.1 494.5 492.5L537 535C546.4 544.4 546.4 559.6 537 568.9C527.6 578.2 512.4 578.3 503.1 568.9L460.6 526.4zM344 248L344 342.1L385 383.1C394.4 392.5 394.4 407.7 385 417C375.6 426.3 360.4 426.4 351.1 417L303.1 369C298.6 364.5 296.1 358.4 296.1 352L296.1 248C296.1 234.7 306.8 224 320.1 224C333.4 224 344.1 234.7 344.1 248z" fill="#22c55e"/>
+                  <path d="M466.6 114.2C461.2 115.9 455.3 116 450.4 113.3C444.6 110.1 438.6 107.1 432.6 104.4C422.2 99.7 418.9 86.1 428.5 79.8C443.5 69.9 461.5 64.1 480.8 64.1C533.4 64.1 576 106.7 576 159.3C576 172.5 573.3 185.1 568.4 196.6C563.9 207.1 550 206.4 543.5 197C539.7 191.5 535.7 186.2 531.5 181C528 176.6 527 170.8 527.7 165.2C527.9 163.3 528.1 161.3 528.1 159.3C528.1 133.2 506.9 112.1 480.9 112.1C476 112.1 471.2 112.9 466.7 114.3zM96.5 196.9C90 206.3 76 207 71.6 196.5C66.7 185 64 172.4 64 159.2C64 106.6 106.6 64 159.2 64C178.5 64 196.5 69.8 211.5 79.7C221.1 86 217.8 99.6 207.4 104.3C201.3 107.1 195.4 110 189.6 113.2C184.7 115.9 178.7 115.8 173.4 114.1C168.9 112.7 164.2 111.9 159.2 111.9C133.1 111.9 112 133.1 112 159.1C112 161.1 112.1 163.1 112.4 165C113.1 170.6 112.1 176.4 108.6 180.8C104.4 186 100.4 191.3 96.6 196.8zM496 352C496 254.8 417.2 176 320 176C222.8 176 144 254.8 144 352C144 449.2 222.8 528 320 528C417.2 528 496 449.2 496 352zM460.5 526.5C422.1 557.4 373.2 576 320 576C266.8 576 217.9 557.4 179.5 526.5L137 569C127.6 578.4 112.4 578.4 103.1 569C93.8 559.6 93.7 544.4 103.1 535.1L145.6 492.6C114.6 454.1 96 405.2 96 352C96 228.3 196.3 128 320 128C443.7 128 544 228.3 544 352C544 405.2 525.4 454.1 494.5 492.5L537 535C546.4 544.4 546.4 559.6 537 568.9C527.6 578.2 512.4 578.3 503.1 568.9L460.6 526.4zM344 248L344 342.1L385 383.1C394.4 392.5 394.4 407.7 385 417C375.6 426.3 360.4 426.4 351.1 417L303.1 369C298.6 364.5 296.1 358.4 296.1 352L296.1 248C296.1 234.7 306.8 224 320.1 224C333.4 224 344.1 234.7 344.1 248z" fill="#A6F527"/>
                 </svg>
               </span>
               <span class="feature-label">7/24 Hizmet</span>
@@ -542,7 +601,7 @@
             <div class="feature-box">
               <span class="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2em" height="2em" style="max-width:100%;height:auto;display:block;margin:auto;">
-                  <path d="M320.3 192L235.7 51.1C229.2 40.3 215.6 36.4 204.4 42L117.8 85.3C105.9 91.2 101.1 105.6 107 117.5L176.6 256.6C146.5 290.5 128.3 335.1 128.3 384C128.3 490 214.3 576 320.3 576C426.3 576 512.3 490 512.3 384C512.3 335.1 494 290.5 464 256.6L533.6 117.5C539.5 105.6 534.7 91.2 522.9 85.3L436.2 41.9C425 36.3 411.3 40.3 404.9 51L320.3 192zM351.1 334.5C352.5 337.3 355.1 339.2 358.1 339.6L408.2 346.9C415.9 348 418.9 357.4 413.4 362.9L377.1 398.3C374.9 400.5 373.9 403.5 374.4 406.6L383 456.5C384.3 464.1 376.3 470 369.4 466.4L324.6 442.8C321.9 441.4 318.6 441.4 315.9 442.8L271.1 466.4C264.2 470 256.2 464.2 257.5 456.5L266.1 406.6C266.6 403.6 265.6 400.5 263.4 398.3L227.1 362.9C221.5 357.5 224.6 348.1 232.3 346.9L282.4 339.6C285.4 339.2 288.1 337.2 289.4 334.5L311.8 289.1C315.2 282.1 325.1 282.1 328.6 289.1L351 334.5z" fill="#22c55e"/>
+                  <path d="M320.3 192L235.7 51.1C229.2 40.3 215.6 36.4 204.4 42L117.8 85.3C105.9 91.2 101.1 105.6 107 117.5L176.6 256.6C146.5 290.5 128.3 335.1 128.3 384C128.3 490 214.3 576 320.3 576C426.3 576 512.3 490 512.3 384C512.3 335.1 494 290.5 464 256.6L533.6 117.5C539.5 105.6 534.7 91.2 522.9 85.3L436.2 41.9C425 36.3 411.3 40.3 404.9 51L320.3 192zM351.1 334.5C352.5 337.3 355.1 339.2 358.1 339.6L408.2 346.9C415.9 348 418.9 357.4 413.4 362.9L377.1 398.3C374.9 400.5 373.9 403.5 374.4 406.6L383 456.5C384.3 464.1 376.3 470 369.4 466.4L324.6 442.8C321.9 441.4 318.6 441.4 315.9 442.8L271.1 466.4C264.2 470 256.2 464.2 257.5 456.5L266.1 406.6C266.6 403.6 265.6 400.5 263.4 398.3L227.1 362.9C221.5 357.5 224.6 348.1 232.3 346.9L282.4 339.6C285.4 339.2 288.1 337.2 289.4 334.5L311.8 289.1C315.2 282.1 325.1 282.1 328.6 289.1L351 334.5z" fill="#A6F527"/>
                 </svg>
               </span>
               <span class="feature-label">1 Yıl Garanti</span>
@@ -550,7 +609,7 @@
             <div class="feature-box">
               <span class="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2em" height="2em" style="max-width:100%;height:auto;display:block;margin:auto;">
-                  <path d="M434.8 54.1C446.7 62.7 451.1 78.3 445.7 91.9L367.3 288L512 288C525.5 288 537.5 296.4 542.1 309.1C546.7 321.8 542.8 336 532.5 344.6L244.5 584.6C233.2 594 217.1 594.5 205.2 585.9C193.3 577.3 188.9 561.7 194.3 548.1L272.7 352L128 352C114.5 352 102.5 343.6 97.9 330.9C93.3 318.2 97.2 304 107.5 295.4L395.5 55.4C406.8 46 422.9 45.5 434.8 54.1z" fill="#22c55e"/>
+                  <path d="M434.8 54.1C446.7 62.7 451.1 78.3 445.7 91.9L367.3 288L512 288C525.5 288 537.5 296.4 542.1 309.1C546.7 321.8 542.8 336 532.5 344.6L244.5 584.6C233.2 594 217.1 594.5 205.2 585.9C193.3 577.3 188.9 561.7 194.3 548.1L272.7 352L128 352C114.5 352 102.5 343.6 97.9 330.9C93.3 318.2 97.2 304 107.5 295.4L395.5 55.4C406.8 46 422.9 45.5 434.8 54.1z" fill="#A6F527"/>
                 </svg>
               </span>
               <span class="feature-label">Hızlı Servis</span>
@@ -560,7 +619,7 @@
             <div class="feature-box">
               <span class="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2em" height="2em" style="max-width:100%;height:auto;display:block;margin:auto;">
-                  <path d="M300.9 149.2L184.3 278.8C179.7 283.9 179.9 291.8 184.8 296.7C215.3 327.2 264.8 327.2 295.3 296.7L327.1 264.9C331.3 260.7 336.6 258.4 342 258C348.8 257.4 355.8 259.7 361 264.9L537.6 440L608 384L608 96L496 160L472.2 144.1C456.4 133.6 437.9 128 418.9 128L348.5 128C347.4 128 346.2 128 345.1 128.1C328.2 129 312.3 136.6 300.9 149.2zM148.6 246.7L255.4 128L215.8 128C190.3 128 165.9 138.1 147.9 156.1L144 160L32 96L32 384L188.4 514.3C211.4 533.5 240.4 544 270.3 544L286 544L279 537C269.6 527.6 269.6 512.4 279 503.1C288.4 493.8 303.6 493.7 312.9 503.1L353.9 544.1L362.9 544.1C382 544.1 400.7 539.8 417.7 531.8L391 505C381.6 495.6 381.6 480.4 391 471.1C400.4 461.8 415.6 461.7 424.9 471.1L456.9 503.1L474.4 485.6C483.3 476.7 485.9 463.8 482 452.5L344.1 315.7L329.2 330.6C279.9 379.9 200.1 379.9 150.8 330.6C127.8 307.6 126.9 270.7 148.6 246.6z" fill="#22c55e"/>
+                  <path d="M300.9 149.2L184.3 278.8C179.7 283.9 179.9 291.8 184.8 296.7C215.3 327.2 264.8 327.2 295.3 296.7L327.1 264.9C331.3 260.7 336.6 258.4 342 258C348.8 257.4 355.8 259.7 361 264.9L537.6 440L608 384L608 96L496 160L472.2 144.1C456.4 133.6 437.9 128 418.9 128L348.5 128C347.4 128 346.2 128 345.1 128.1C328.2 129 312.3 136.6 300.9 149.2zM148.6 246.7L255.4 128L215.8 128C190.3 128 165.9 138.1 147.9 156.1L144 160L32 96L32 384L188.4 514.3C211.4 533.5 240.4 544 270.3 544L286 544L279 537C269.6 527.6 269.6 512.4 279 503.1C288.4 493.8 303.6 493.7 312.9 503.1L353.9 544.1L362.9 544.1C382 544.1 400.7 539.8 417.7 531.8L391 505C381.6 495.6 381.6 480.4 391 471.1C400.4 461.8 415.6 461.7 424.9 471.1L456.9 503.1L474.4 485.6C483.3 476.7 485.9 463.8 482 452.5L344.1 315.7L329.2 330.6C279.9 379.9 200.1 379.9 150.8 330.6C127.8 307.6 126.9 270.7 148.6 246.6z" fill="#A6F527"/>
                 </svg>
               </span>
               <span class="feature-label">%100 Memnuniyet</span>
@@ -568,7 +627,7 @@
             <div class="feature-box">
               <span class="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2em" height="2em" style="max-width:100%;height:auto;display:block;margin:auto;">
-                  <path d="M128 96C92.7 96 64 124.7 64 160L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 256C576 220.7 547.3 192 512 192L136 192C122.7 192 112 181.3 112 168C112 154.7 122.7 144 136 144L520 144C533.3 144 544 133.3 544 120C544 106.7 533.3 96 520 96L128 96zM480 320C497.7 320 512 334.3 512 352C512 369.7 497.7 384 480 384C462.3 384 448 369.7 448 352C448 334.3 462.3 320 480 320z" fill="#22c55e"/>
+                  <path d="M128 96C92.7 96 64 124.7 64 160L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 256C576 220.7 547.3 192 512 192L136 192C122.7 192 112 181.3 112 168C112 154.7 122.7 144 136 144L520 144C533.3 144 544 133.3 544 120C544 106.7 533.3 96 520 96L128 96zM480 320C497.7 320 512 334.3 512 352C512 369.7 497.7 384 480 384C462.3 384 448 369.7 448 352C448 334.3 462.3 320 480 320z" fill="#A6F527"/>
                 </svg>
               </span>
               <span class="feature-label">Ekonomik</span>
@@ -576,13 +635,229 @@
             <div class="feature-box">
               <span class="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2em" height="2em" style="max-width:100%;height:auto;display:block;margin:auto;">
-                  <path d="M256 160L256 224L384 224L384 160C384 124.7 355.3 96 320 96C284.7 96 256 124.7 256 160zM192 224L192 160C192 89.3 249.3 32 320 32C390.7 32 448 89.3 448 160L448 224C483.3 224 512 252.7 512 288L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 288C128 252.7 156.7 224 192 224z" fill="#22c55e"/>
+                  <path d="M256 160L256 224L384 224L384 160C384 124.7 355.3 96 320 96C284.7 96 256 124.7 256 160zM192 224L192 160C192 89.3 249.3 32 320 32C390.7 32 448 89.3 448 160L448 224C483.3 224 512 252.7 512 288L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 288C128 252.7 156.7 224 192 224z" fill="#A6F527"/>
                 </svg>
               </span>
               <span class="feature-label">%100 Güvenilir</span>
             </div>
           </div>
         </div>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section" style="margin-top: 15rem;">
+            <h2 class="section-title">Müşteri Yorumları</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Ahmet Demir</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Buzdolabım soğutmuyordu, aynı gün gelip tamir ettiler. Çok memnun kaldım, herkese tavsiye ederim."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Fatma Yılmaz</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Fiyatları çok uygun, işçilik kaliteli. Teknisyen çok kibar ve bilgiliydi. Teşekkürler."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Mehmet Kaya</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Hızlı servis, garantili işçilik. Buzdolabım eskisinden bile daha iyi çalışıyor şimdi."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Zeynep Öztürk</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-number">4/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Çamaşır makinesi tamiri için aradım. Hızlı geldiler ve sorunu çözdüler. Fiyat biraz yüksek geldi ama kaliteli."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Murat Arslan</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Klima servisinde çok memnun kaldım. Teknisyen işini çok iyi biliyor, kesinlikle tavsiye ederim."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Ayşe Korkmaz</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Bulaşık makinesi arızası için çağırdık. Aynı gün gelip hallettiler. Çok profesyonel yaklaşım."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Emre Şahin</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-number">4/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Fırın tamiri konusunda başarılılar. Sadece randevu almakta biraz zorlandım. Ama iş kalitesi güzel."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Deniz Yıldız</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Televizyon ekranı bozulmuştu. Usta çok deneyimli, sorunu hemen teşhis etti ve tamir etti."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Selim Doğan</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Kombi bakımı için geldiler. Hem hızlı hem de ekonomik. Garanti verdikleri için güven verici."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Özlem Akgün</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Derin dondurucu tamiri için aradığımda hemen gelip hallettiler. Çok memnun kaldık."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Hakan Ertürk</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-number">4/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Mikrodalga fırın tamiri yaptırdım. İşçilik güzel ama parça fiyatları biraz pahalı geldi."
+                    </p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Ceren Aktaş</div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5/5</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Su ısıtıcısı arızası vardı. Teknisyen çok kibar ve bilgiliydi. Kesinlikle tekrar tercih ederim."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-icon">❓</span>
+                    <span class="faq-question-text">Arızalı cihazımı neden tamir ettirmeliyim?</span>
+                </div>
+                <p class="faq-answer">
+                    Yeni cihaz almak yerine tamiri genellikle daha ekonomiktir. Uzman teknisyenlerimiz ile cihazınızı uzun yıllar daha kullanabilirsiniz.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-icon">❓</span>
+                    <span class="faq-question-text">Tamir süresi ne kadar?</span>
+                </div>
+                <p class="faq-answer">
+                    Arızanın türüne göre değişir ancak çoğu tamirler aynı gün içerisinde tamamlanır. Parça değişimi gereken durumlarda 1-2 gün sürebilir.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-icon">❓</span>
+                    <span class="faq-question-text">Garanti veriliyor mu?</span>
+                </div>
+                <p class="faq-answer">
+                    Evet, tüm tamirlerimizde 3 ay işçilik garantisi veriyoruz. Değiştirilen parçalar için üretici garantisi geçerlidir.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-icon">❓</span>
+                    <span class="faq-question-text">Hangi marka cihazları tamir ediyorsunuz?</span>
+                </div>
+                <p class="faq-answer">
+                    Arçelik, Beko, Bosch, Siemens, LG, Samsung, Vestel, Profilo gibi tüm yerli ve yabancı markaları tamir ediyoruz.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-icon">❓</span>
+                    <span class="faq-question-text">Ödeme nasıl yapılır?</span>
+                </div>
+                <p class="faq-answer">
+                    Nakit, kredi kartı ve banka kartı ile ödeme kabul ediyoruz. Tamir tamamlandıktan sonra ödeme alınır.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-icon">❓</span>
+                    <span class="faq-question-text">Servis bölgeniz neresi?</span>
+                </div>
+                <p class="faq-answer">
+                    İstanbul genelinde hizmet vermekteyiz. Tüm ilçelere ulaşım sağlanmaktadır. Detaylı bilgi için arayabilirsiniz.
+                </p>
+            </div>
+        </section>
       </div>
     </section>
     </main>

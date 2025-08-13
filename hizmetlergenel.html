@@ -230,6 +230,7 @@
             border: none;
             cursor: pointer;
             transition: background 0.2s, box-shadow 0.2s;
+            border-radius: 50px;
         }
         .call-btn-custom:hover {
             background: #1565C0;
@@ -261,10 +262,14 @@
         /* Reviews Section */
         .reviews-section{margin-bottom:4rem}
         .section-title{font-size:2rem;font-weight:700;color:#1f2937;text-align:center;margin-bottom:2rem}
-        .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+        .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
         .review-card{background:#f8fafc;padding:1.5rem;border-radius:1rem;border-left:4px solid #2563eb}
-        .review-name{font-weight:600;color:#1f2937;margin-bottom:.5rem}
-        .review-text{color:#6b7280;line-height:1.6;font-style:italic}
+        .review-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem}
+        .review-name{font-weight:600;color:#1f2937;margin:0}
+        .review-rating{display:flex;flex-direction:row;align-items:center;gap:.5rem}
+        .review-rating .stars{color:#fbbf24;font-size:1rem;line-height:1}
+        .review-rating .rating-number{font-size:.875rem;color:#6b7280;font-weight:500}
+        .review-text{color:#6b7280;line-height:1.6;font-style:italic;margin:0}
         
         /* FAQ Section */
         .faq-section{margin-bottom:4rem}
@@ -400,6 +405,7 @@
             }
 
             .reviews-grid {
+                grid-template-columns: 1fr;
                 gap: 1.5rem;
                 padding: 0 0.5rem;
             }
@@ -408,6 +414,8 @@
                 padding: 1.25rem;
                 border-radius: 0.75rem;
             }
+            .review-header{flex-direction:column;align-items:flex-start;gap:.5rem}
+            .review-rating{flex-direction:row;align-items:center;gap:.5rem}
 
             .faq-section {
                 margin-bottom: 3rem;
@@ -506,6 +514,7 @@
             }
 
             .reviews-grid {
+                grid-template-columns: 1fr;
                 gap: 1rem;
                 padding: 0 0.25rem;
             }
@@ -547,6 +556,11 @@
                 width: auto;
                 white-space: nowrap;
             }
+        }
+
+        /* Tablet only - 2 columns */
+        @media(min-width:768px) and (max-width:1023px){
+            .reviews-grid{grid-template-columns:repeat(2,1fr);gap:1.8rem}
         }
 
         @media (max-width: 360px) {
@@ -806,21 +820,147 @@
                 <h2 class="section-title">Müşteri Yorumları</h2>
                 <div class="reviews-grid">
                     <div class="review-card">
-                        <div class="review-name">Ahmet Demir</div>
+                        <div class="review-header">
+                            <div class="review-name">Ahmet Demir</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
                         <p class="review-text">
                             "Buzdolabım soğutmuyordu, aynı gün gelip tamir ettiler. Çok memnun kaldım, herkese tavsiye ederim."
                         </p>
                     </div>
                     <div class="review-card">
-                        <div class="review-name">Fatma Yılmaz</div>
+                        <div class="review-header">
+                            <div class="review-name">Fatma Yılmaz</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
                         <p class="review-text">
                             "Fiyatları çok uygun, işçilik kaliteli. Teknisyen çok kibar ve bilgiliydi. Teşekkürler."
                         </p>
                     </div>
                     <div class="review-card">
-                        <div class="review-name">Mehmet Kaya</div>
+                        <div class="review-header">
+                            <div class="review-name">Mehmet Kaya</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
                         <p class="review-text">
                             "Hızlı servis, garantili işçilik. Buzdolabım eskisinden bile daha iyi çalışıyor şimdi."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Zeynep Öztürk</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-number">4/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Çamaşır makinesi tamiri için aradım. Hızlı geldiler ve sorunu çözdüler. Fiyat biraz yüksek geldi ama kaliteli."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Murat Arslan</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Klima servisinde çok memnun kaldım. Teknisyen işini çok iyi biliyor, kesinlikle tavsiye ederim."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Ayşe Korkmaz</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Bulaşık makinesi arızası için çağırdık. Aynı gün gelip hallettiler. Çok profesyonel yaklaşım."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Emre Şahin</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-number">4/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Fırın tamiri konusunda başarılılar. Sadece randevu almakta biraz zorlandım. Ama iş kalitesi güzel."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Deniz Yıldız</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Televizyon ekranı bozulmuştu. Usta çok deneyimli, sorunu hemen teşhis etti ve tamir etti."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Selim Doğan</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Kombi bakımı için geldiler. Hem hızlı hem de ekonomik. Garanti verdikleri için güven verici."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Özlem Akgün</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Derin dondurucu tamiri için aradığımda hemen gelip hallettiler. Çok memnun kaldık."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Hakan Ertürk</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-number">4/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Mikrodalga fırın tamiri yaptırdım. İşçilik güzel ama parça fiyatları biraz pahalı geldi."
+                        </p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-name">Ceren Aktaş</div>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            "Su ısıtıcısı arızası vardı. Teknisyen çok kibar ve bilgiliydi. Kesinlikle tekrar tercih ederim."
                         </p>
                     </div>
                 </div>
